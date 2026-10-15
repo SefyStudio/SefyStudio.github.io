@@ -1,14 +1,10 @@
-# Spirit Fly website
+# Sefy Studio website
 
-Static GitHub Pages site for SefyStudio and Spirit Fly.
+Static GitHub Pages site for Sefy Studio's games (https://sefystudio.github.io/).
 
-A public support and privacy contact address will be added before the App Store release.
+- `/` — studio home: the games and the contact address
+- `/loom-pop/` — Loom Pop! landing page (App Store marketing URL), `support.html`, `privacy.html`
+- `/pip-and-pals/` — Pip & Pals: Hide & Seek, `support.html`, `privacy.html`, `join.html` (co-op invite links)
+- `/app-ads.txt` — AdMob seller line for both games (publisher `pub-3987708681787657`)
 
-Expected public URLs:
-
-- `https://sefystudio.github.io/`
-- `https://sefystudio.github.io/privacy-policy/`
-- `https://sefystudio.github.io/support/`
-- `https://sefystudio.github.io/app-ads.txt`
-
-The `app-ads.txt` seller line uses AdMob publisher ID `pub-5831568531965340`. Compare it with the personalized snippet shown in AdMob before release.
+These URLs are entered in App Store Connect and AdMob: keep the paths stable.

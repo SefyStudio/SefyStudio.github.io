@@ -1,54 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Official support and privacy information for Spirit Fly by SefyStudio.">
-  <title>Spirit Fly — SefyStudio</title>
-  <link rel="stylesheet" href="/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sefy Studio — cozy games for iPhone</title>
+<meta name="description" content="Sefy Studio makes cozy, colourful games for iPhone: Loom Pop and Pip & Pals.">
+<meta property="og:title" content="Sefy Studio">
+<meta property="og:description" content="Cozy, colourful games for iPhone.">
+<meta property="og:image" content="https://sefystudio.github.io/assets/sefystudio.png">
+<link rel="icon" href="/assets/sefy.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <main class="shell">
-    <nav aria-label="Primary navigation">
-      <a class="brand" href="/">SPIRIT <span>FLY</span></a>
-      <div class="nav-links">
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/support/">Support</a>
+<header class="hero">
+  <img class="wordmark" src="/assets/sefystudio.png" alt="Sefy Studio" width="640" height="240">
+  <p class="tag">Cozy, colourful games for iPhone.</p>
+</header>
+
+<main>
+  <section class="games">
+    <a class="game" href="/loom-pop/">
+      <img src="/assets/loom-pop-icon.png" alt="" width="360" height="360">
+      <div>
+        <h3>Loom Pop!</h3>
+        <p>A cozy yarn-sorting puzzle. Tap the yarn, fill the loom and weave 200+ colourful patterns.</p>
+        <span class="links">Website · <span data-href="/loom-pop/support.html">Support</span> · <span data-href="/loom-pop/privacy.html">Privacy</span></span>
       </div>
-    </nav>
-
-    <section class="hero">
-      <p class="eyebrow">A SefyStudio game</p>
-      <h1>Fly fast.<br><em>Become a legend.</em></h1>
-      <p class="lead">Spirit Fly is a fast-paced fantasy flight game for iPhone and iPad.</p>
-      <div class="actions">
-        <a class="button" href="/support/">Get support</a>
-        <a class="text-link" href="/privacy-policy/">Read the Privacy Policy →</a>
+    </a>
+    <a class="game" href="/pip-and-pals/">
+      <img src="/assets/pip-and-pals-icon.png" alt="" width="360" height="360">
+      <div>
+        <h3>Pip &amp; Pals: Hide &amp; Seek</h3>
+        <p>Three friends fell from their moon. Hide from the drones, finish the tasks and fix the rocket, alone or with friends.</p>
+        <span class="links">Website · <span data-href="/pip-and-pals/support.html">Support</span> · <span data-href="/pip-and-pals/privacy.html">Privacy</span></span>
       </div>
-    </section>
+    </a>
+  </section>
+</main>
 
-    <section class="cards" aria-label="Information">
-      <article>
-        <p class="card-number">01</p>
-        <h2>Privacy first</h2>
-        <p>Your consent choices are requested before advertising services are initialized where required.</p>
-      </article>
-      <article>
-        <p class="card-number">02</p>
-        <h2>Optional rewarded ads</h2>
-        <p>Watching a rewarded ad is always your choice and grants the reward shown in the game.</p>
-      </article>
-      <article>
-        <p class="card-number">03</p>
-        <h2>Game Center</h2>
-        <p>Compete on Apple Game Center leaderboards using your Apple Game Center profile.</p>
-      </article>
-    </section>
-
-    <footer>
-      <p>© 2026 SefyStudio. All rights reserved.</p>
-      <div><a href="/privacy-policy/">Privacy Policy</a><a href="/support/">Support</a></div>
-    </footer>
-  </main>
+<footer>
+  <p>Questions? <a href="mailto:neonda.ai@gmail.com">neonda.ai@gmail.com</a></p>
+  <p><small>© 2026 Sefy Studio. Apple and the Apple logo are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</small></p>
+</footer>
+<script>
+  // Small links inside a card: open their own page instead of the card's.
+  document.querySelectorAll('[data-href]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); location.href = el.dataset.href; });
+  });
+</script>
 </body>
 </html>
