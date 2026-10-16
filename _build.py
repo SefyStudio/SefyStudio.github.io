@@ -9,7 +9,7 @@ pip-and-pals/play/ is the Pip & Pals web game (a copy of pip-and-pals/web/index.
 import os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-SITE = "https://sefystudio.github.io"
+SITE = "https://sefystudio.com"
 EMAIL = "neonda.ai@gmail.com"
 LOOM_STORE = "https://apps.apple.com/app/id6822636298"
 PIP_STORE = "https://apps.apple.com/app/id6819880110"
