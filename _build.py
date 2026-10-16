@@ -7,6 +7,7 @@ Edit the page bodies below, never the generated .html files. Files starting with
 pip-and-pals/play/ is the Pip & Pals web game (a copy of pip-and-pals/web/index.html with house ads), not built here.
 """
 import os
+import re
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://sefystudio.com"
@@ -18,6 +19,22 @@ APPLE = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" 
          '3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-4.2zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 '
          '1 .1 2.1-.6 2.8-1.4z"/></svg>')
 PLAY = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg>'
+
+
+def live_mascot():
+    """The mascot SVG inlined with hooks for CSS/JS: blinking eyes that follow the pointer, pulsing rays, a breathing body."""
+    svg = open(os.path.join(ROOT, "assets/brand/sefy-mascot.svg"), encoding="utf-8").read()
+    svg = svg.replace('<svg ', '<svg class="mascot" role="img" aria-label="Sefy, the Sefy Studio mascot" ', 1)
+    svg = re.sub(r'width="\d+" height="\d+"', '', svg, count=1)
+    eyes = re.findall(r'<rect [^>]*fill="#16112A"[^>]*/>', svg)
+    for e in eyes:
+        svg = svg.replace(e, f'<g class="eye">{e}</g>')
+    svg = svg.replace(f'<g class="eye">{eyes[0]}</g>', f'<g class="eyes"><g class="eye">{eyes[0]}</g>', 1)
+    svg = svg.replace(f'<g class="eye">{eyes[1]}</g>', f'<g class="eye">{eyes[1]}</g></g>', 1)
+    svg = svg.replace('<g transform="scale(0.25)', '<g class="rays-wrap"><g transform="scale(0.25)', 1)
+    i = svg.index('<g class="rays-wrap">'); j = svg.index('</g>', i) + 4
+    svg = svg[:j] + '</g>' + svg[j:]
+    return svg
 
 
 def store(url, small=False):
@@ -146,14 +163,7 @@ HOME = f"""
       <a class="btn ghost" href="/pip-and-pals/play/">{PLAY} Play Pip &amp; Pals in your browser</a>
     </div>
   </div>
-  <div class="stage" aria-hidden="true" data-parallax>
-    <div class="burst"></div>
-    <img class="mascot" data-depth="18" src="/assets/brand/sefy-mascot.svg" alt="" width="1540" height="1460">
-    <img class="float f1" data-depth="40" src="/assets/loom-pop-icon.png" alt="" width="152" height="152">
-    <img class="float f2" data-depth="55" src="/assets/pip-and-pals-icon.png" alt="" width="152" height="152">
-    <img class="float f3" data-depth="30" src="/loom-pop/img/motif-sea.png" alt="" width="160" height="160">
-    <img class="float f4" data-depth="65" src="/loom-pop/img/motif-sweets.png" alt="" width="160" height="160">
-  </div>
+  <div class="stage" data-parallax>{live_mascot()}</div>
 </div></section>
 
 <div class="marquee-wrap" aria-hidden="true"><div class="marquee"><div class="track">{MARQUEE}{MARQUEE}</div></div></div>

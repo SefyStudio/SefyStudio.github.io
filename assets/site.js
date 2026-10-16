@@ -30,16 +30,14 @@
 (function () {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var fine = window.matchMedia('(pointer: fine)').matches;
-  var stage = document.querySelector('[data-parallax]');
-  if (stage && fine) {
-    var hero = stage.closest('section');
-    hero.addEventListener('pointermove', function (e) {
-      var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      stage.querySelectorAll('[data-depth]').forEach(function (el) {
-        var d = +el.getAttribute('data-depth'); el.style.transform = 'translate(' + (-x * d) + 'px,' + (-y * d) + 'px)';
-      });
-    });
-    hero.addEventListener('pointerleave', function () { stage.querySelectorAll('[data-depth]').forEach(function (el) { el.style.transform = ''; }); });
+  var stage = document.querySelector('[data-parallax]'), eyes = stage && stage.querySelector('.eyes');
+  if (eyes && fine) {   // the eyes look toward the pointer; a click makes Sefy blink
+    window.addEventListener('pointermove', function (e) {
+      var r = stage.getBoundingClientRect(), dx = e.clientX - (r.left + r.width * .55), dy = e.clientY - (r.top + r.height * .4);
+      var d = Math.hypot(dx, dy) || 1, k = Math.min(1, d / 400);
+      eyes.style.transform = 'translate(' + (dx / d * 14 * k).toFixed(1) + 'px,' + (dy / d * 10 * k).toFixed(1) + 'px)';
+    }, { passive: true });
+    stage.addEventListener('click', function () { stage.classList.remove('happy'); void stage.offsetWidth; stage.classList.add('happy'); });
   }
   document.querySelectorAll('[data-glow]').forEach(function (el) {
     el.addEventListener('pointermove', function (e) {
