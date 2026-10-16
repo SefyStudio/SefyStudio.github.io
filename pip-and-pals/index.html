@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Pip & Pals: Hide & Seek</title>
 <meta name="description" content="Hide from the drones, finish the tasks and fix the rocket, alone or with friends. Play free in your browser or on iPhone and iPad.">
-<meta name="theme-color" content="#110a2b">
+<meta name="theme-color" content="#f7f5ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0c19" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pip & Pals: Hide & Seek">
 <meta property="og:description" content="Hide from the drones, finish the tasks and fix the rocket, alone or with friends. Play free in your browser or on iPhone and iPad.">
@@ -21,14 +22,13 @@
 <meta name="apple-itunes-app" content="app-id=6819880110">
 </head>
 <body data-game="pip">
-<div class="sky" aria-hidden="true"><i></i><b></b></div>
 <header class="nav"><div class="wrap"><div class="bar">
-  <a class="logo" href="/"><img src="/assets/sefystudio.png" alt="Sefy Studio" width="160" height="60"></a>
-  <nav aria-label="Main"><a href="/#games">Games</a><a href="/loom-pop/" class="opt">Loom Pop!</a><a href="/pip-and-pals/" class="opt" aria-current="page">Pip &amp; Pals</a><a href="/#contact">Contact</a></nav>
+  <a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Sefy Studio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Sefy Studio" width="300" height="96"></a>
+  <nav aria-label="Main"><a href="/#games">Games</a><a href="/loom-pop/" class="opt">Loom Pop!</a><a href="/pip-and-pals/" class="opt" aria-current="page">Pip &amp; Pals</a><a href="/#about" class="opt">About</a><a href="/#contact">Contact</a></nav>
 </div></div></header>
 <main>
 <section class="ghero"><div class="wrap">
-  <div class="panel glass">
+  <div class="panel card">
     <div class="art"><img src="/assets/pip-and-pals-art.webp" alt="Pip, Momo and Ziggy hiding behind a bush from a drone" width="1600" height="685"></div>
     <div class="info">
       <img class="icon" src="/assets/pip-and-pals-icon.png" alt="Pip &amp; Pals app icon" width="224" height="224">
@@ -43,14 +43,14 @@
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">The game</span><h2>Hide in plain sight</h2>
+  <div class="section-head reveal"><h2>Hide in plain sight</h2>
     <p>Become a bush, a barrel, even a cow. Stay still while the drones sweep past, then sneak on to the next task.</p></div>
   <div class="features">
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-1.webp" alt="Pip hiding as a bush" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-1.webp" alt="Pip hiding as a bush" width="540" height="1173" loading="lazy"></div>
       <h3>Morph &amp; hide</h3><p>Turn into the objects around you and hold your breath. Every world brings a new drone with its own way of hunting.</p></article>
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-2.webp" alt="Three friends playing together" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-2.webp" alt="Three friends playing together" width="540" height="1173" loading="lazy"></div>
       <h3>Play with friends</h3><p>Team up with up to 3 pals: share a room code, split the tasks and revive each other. Works across phone, tablet and web.</p></article>
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-3.webp" alt="Running from a drone" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-3.webp" alt="Running from a drone" width="540" height="1173" loading="lazy"></div>
       <h3>Spotted? Run!</h3><p>Dash, dodge and shake off the drones, crack secret codes and pull the right levers to fix the rocket home.</p></article>
   </div>
 </div></section>
@@ -58,9 +58,8 @@
 <section><div class="wrap watch">
   <div class="phone reveal"><video src="img/preview.mp4" poster="img/preview-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Pip &amp; Pals gameplay preview"></video></div>
   <div class="reveal">
-    <span class="eyebrow">See it in motion</span>
-    <h2 style="font-size:clamp(32px,4.6vw,52px);margin-top:12px">21 levels in 7 worlds</h2>
-    <p style="color:var(--muted);font-size:18px;margin-top:12px">From sunny meadows to a moonlit night: clever tasks, secret codes and a rocket to fix. Play the full game right here in your browser, or get the app for iPhone and iPad.</p>
+    <h2>21 levels in 7 worlds</h2>
+    <p class="lede">From sunny meadows to a moonlit night: clever tasks, secret codes and a rocket to fix. Play the full game right here in your browser, or get the app for iPhone and iPad.</p>
     <div class="facts-table">
       <div class="fact"><small>Players</small><strong>Solo or co-op for 2–3</strong></div>
       <div class="fact"><small>Platforms</small><strong>iPhone, iPad &amp; web</strong></div>
@@ -72,7 +71,7 @@
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">Screenshots</span><h2>From the App Store</h2></div>
+  <div class="section-head reveal"><h2>From the App Store</h2></div>
   <div class="rail reveal" tabindex="0" aria-label="Screenshots">
     <img src="img/shot-1.webp" alt="Hide in plain sight" width="540" height="1173" loading="lazy">
     <img src="img/shot-2.webp" alt="Play with friends" width="540" height="1173" loading="lazy">
@@ -87,27 +86,27 @@
 
 <section><div class="wrap">
   <div class="help">
-    <a class="glass reveal" href="support.html"><b>Support</b><span>Restore Plus, co-op tips and progress questions.</span></a>
-    <a class="glass reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Temporary co-op rooms.</span></a>
-    <a class="glass reveal" href="join.html"><b>Join a room</b><span>Got an invite link? Open it here.</span></a>
+    <a class="card reveal" href="support.html"><b>Support</b><span>Restore Plus, co-op tips and progress questions.</span></a>
+    <a class="card reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Temporary co-op rooms.</span></a>
+    <a class="card reveal" href="join.html"><b>Join a room</b><span>Got an invite link? Open it here.</span></a>
   </div>
 </div></section>
 <section id="contact"><div class="wrap">
-  <div class="contact glass reveal">
+  <div class="contact card reveal">
     <div><h2>Say hello</h2><p>Questions about Pip &amp; Pals? Ideas, bugs, press or partnerships: we read every email.</p></div>
-    <div class="copy-row"><code>neonda.ai@gmail.com</code><button class="btn primary" type="button" data-copy="neonda.ai@gmail.com">Copy email</button></div>
+    <div class="copy-row"><code>support@sefystudio.com</code><button class="btn primary" type="button" data-copy="support@sefystudio.com">Copy email</button></div>
   </div>
 </div></section>
 </main>
 <footer><div class="wrap">
   <div class="cols">
-    <div class="brand"><a href="/"><img src="/assets/sefystudio.png" alt="Sefy Studio" width="160" height="60"></a>
-      <p>Cozy, colourful games for iPhone and iPad, made with care by a tiny independent studio.</p></div>
+    <div class="brand"><a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Sefy Studio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Sefy Studio" width="300" height="96"></a>
+      <p>An independent studio making cozy games and apps for iPhone, iPad and the web.</p></div>
     <div><h4>Loom Pop!</h4><ul><li><a href="/loom-pop/">Overview</a></li><li><a href="https://apps.apple.com/app/id6822636298">App Store</a></li>
       <li><a href="/loom-pop/support.html">Support</a></li><li><a href="/loom-pop/privacy.html">Privacy</a></li></ul></div>
     <div><h4>Pip &amp; Pals</h4><ul><li><a href="/pip-and-pals/">Overview</a></li><li><a href="/pip-and-pals/play/">Play in browser</a></li>
       <li><a href="https://apps.apple.com/app/id6819880110">App Store</a></li><li><a href="/pip-and-pals/support.html">Support</a></li><li><a href="/pip-and-pals/privacy.html">Privacy</a></li></ul></div>
-    <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
+    <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/brand/">Brand assets</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
   </div>
   <p class="legal">© <span id="year">2026</span> Sefy Studio. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
 </div></footer>

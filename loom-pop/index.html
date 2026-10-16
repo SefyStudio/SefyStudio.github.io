@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Loom Pop! Yarn Sort Puzzle</title>
 <meta name="description" content="A cozy yarn-sorting puzzle for iPhone. Tap yarn balls, fill the loom and weave 200+ colourful patterns.">
-<meta name="theme-color" content="#110a2b">
+<meta name="theme-color" content="#f7f5ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0c19" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Loom Pop! Yarn Sort Puzzle">
 <meta property="og:description" content="A cozy yarn-sorting puzzle for iPhone. Tap yarn balls, fill the loom and weave 200+ colourful patterns.">
@@ -21,14 +22,13 @@
 <meta name="apple-itunes-app" content="app-id=6822636298">
 </head>
 <body data-game="loom">
-<div class="sky" aria-hidden="true"><i></i><b></b></div>
 <header class="nav"><div class="wrap"><div class="bar">
-  <a class="logo" href="/"><img src="/assets/sefystudio.png" alt="Sefy Studio" width="160" height="60"></a>
-  <nav aria-label="Main"><a href="/#games">Games</a><a href="/loom-pop/" class="opt" aria-current="page">Loom Pop!</a><a href="/pip-and-pals/" class="opt">Pip &amp; Pals</a><a href="/#contact">Contact</a></nav>
+  <a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Sefy Studio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Sefy Studio" width="300" height="96"></a>
+  <nav aria-label="Main"><a href="/#games">Games</a><a href="/loom-pop/" class="opt" aria-current="page">Loom Pop!</a><a href="/pip-and-pals/" class="opt">Pip &amp; Pals</a><a href="/#about" class="opt">About</a><a href="/#contact">Contact</a></nav>
 </div></div></header>
 <main>
 <section class="ghero"><div class="wrap">
-  <div class="panel glass">
+  <div class="panel card">
     <div class="art"><img src="/assets/loom-pop-art.webp" alt="Knitted pattern cards pegged on yarn lines above a pile of yarn balls" width="1600" height="685"></div>
     <div class="info">
       <img class="icon" src="/assets/loom-pop-icon.png" alt="Loom Pop! app icon" width="224" height="224">
@@ -43,14 +43,14 @@
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">The game</span><h2>Tap, match &amp; weave</h2>
+  <div class="section-head reveal"><h2>Tap, match &amp; weave</h2>
     <p>Easy to learn, endlessly satisfying: every yarn you sort knits its share of a picture on the loom.</p></div>
   <div class="features">
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-2.webp" alt="A finished woven puppy pattern" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-2.webp" alt="A finished woven puppy pattern" width="540" height="1173" loading="lazy"></div>
       <h3>Sort the yarn</h3><p>Pick yarn balls from the pile and send them to the right colour. Soft sounds and a gentle tick when a row is done.</p></article>
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-1.webp" alt="The sticker album with eight collections" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-1.webp" alt="The sticker album with eight collections" width="540" height="1173" loading="lazy"></div>
       <h3>Collect 200+ patterns</h3><p>Fill a sticker album across eight collections, from Kilim Classics and Sweet Shop to Sea Life and Adventure.</p></article>
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-4.webp" alt="A customer waiting for their rug" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-4.webp" alt="A customer waiting for their rug" width="540" height="1173" loading="lazy"></div>
       <h3>Happy customers</h3><p>Weave each order before your customer loses patience, and meet a new customer of the day.</p></article>
   </div>
 </div></section>
@@ -58,9 +58,8 @@
 <section><div class="wrap watch">
   <div class="phone reveal"><video src="img/preview.mp4" poster="img/preview-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Loom Pop! gameplay preview"></video></div>
   <div class="reveal">
-    <span class="eyebrow">See it in motion</span>
-    <h2 style="font-size:clamp(32px,4.6vw,52px);margin-top:12px">A little calm in every level</h2>
-    <p style="color:var(--muted);font-size:18px;margin-top:12px">Grow your yarn shop, decorate the Cozy Corner and the Loom Workshop, keep a win streak going and open a daily gift. Play anywhere, no Wi-Fi needed.</p>
+    <h2>A little calm in every level</h2>
+    <p class="lede">Grow your yarn shop, decorate the Cozy Corner and the Loom Workshop, keep a win streak going and open a daily gift. Play anywhere, no Wi-Fi needed.</p>
     <div class="facts-table">
       <div class="fact"><small>Patterns</small><strong>200+ in 8 collections</strong></div>
       <div class="fact"><small>Devices</small><strong>iPhone, iOS 17+</strong></div>
@@ -71,7 +70,7 @@
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">Screenshots</span><h2>From the App Store</h2></div>
+  <div class="section-head reveal"><h2>From the App Store</h2></div>
   <div class="rail reveal" tabindex="0" aria-label="Screenshots">
     <img src="img/shot-1.webp" alt="Collect 200+ cozy patterns" width="540" height="1173" loading="lazy">
     <img src="img/shot-2.webp" alt="Tap, match and weave" width="540" height="1173" loading="lazy">
@@ -85,27 +84,27 @@
 
 <section><div class="wrap">
   <div class="help">
-    <a class="glass reveal" href="support.html"><b>Support</b><span>Restore No Ads, missing coins, progress and ad choices.</span></a>
-    <a class="glass reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Ads by Google AdMob.</span></a>
-    <a class="glass reveal" href="https://apps.apple.com/app/id6822636298"><b>App Store</b><span>Free download for iPhone.</span></a>
+    <a class="card reveal" href="support.html"><b>Support</b><span>Restore No Ads, missing coins, progress and ad choices.</span></a>
+    <a class="card reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Ads by Google AdMob.</span></a>
+    <a class="card reveal" href="https://apps.apple.com/app/id6822636298"><b>App Store</b><span>Free download for iPhone.</span></a>
   </div>
 </div></section>
 <section id="contact"><div class="wrap">
-  <div class="contact glass reveal">
+  <div class="contact card reveal">
     <div><h2>Say hello</h2><p>Questions about Loom Pop!? Ideas, bugs, press or partnerships: we read every email.</p></div>
-    <div class="copy-row"><code>neonda.ai@gmail.com</code><button class="btn primary" type="button" data-copy="neonda.ai@gmail.com">Copy email</button></div>
+    <div class="copy-row"><code>support@sefystudio.com</code><button class="btn primary" type="button" data-copy="support@sefystudio.com">Copy email</button></div>
   </div>
 </div></section>
 </main>
 <footer><div class="wrap">
   <div class="cols">
-    <div class="brand"><a href="/"><img src="/assets/sefystudio.png" alt="Sefy Studio" width="160" height="60"></a>
-      <p>Cozy, colourful games for iPhone and iPad, made with care by a tiny independent studio.</p></div>
+    <div class="brand"><a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Sefy Studio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Sefy Studio" width="300" height="96"></a>
+      <p>An independent studio making cozy games and apps for iPhone, iPad and the web.</p></div>
     <div><h4>Loom Pop!</h4><ul><li><a href="/loom-pop/">Overview</a></li><li><a href="https://apps.apple.com/app/id6822636298">App Store</a></li>
       <li><a href="/loom-pop/support.html">Support</a></li><li><a href="/loom-pop/privacy.html">Privacy</a></li></ul></div>
     <div><h4>Pip &amp; Pals</h4><ul><li><a href="/pip-and-pals/">Overview</a></li><li><a href="/pip-and-pals/play/">Play in browser</a></li>
       <li><a href="https://apps.apple.com/app/id6819880110">App Store</a></li><li><a href="/pip-and-pals/support.html">Support</a></li><li><a href="/pip-and-pals/privacy.html">Privacy</a></li></ul></div>
-    <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
+    <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/brand/">Brand assets</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
   </div>
   <p class="legal">© <span id="year">2026</span> Sefy Studio. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
 </div></footer>

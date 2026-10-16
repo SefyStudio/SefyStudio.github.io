@@ -10,7 +10,7 @@ import os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://sefystudio.com"
-EMAIL = "neonda.ai@gmail.com"
+EMAIL = "support@sefystudio.com"
 LOOM_STORE = "https://apps.apple.com/app/id6822636298"
 PIP_STORE = "https://apps.apple.com/app/id6819880110"
 APPLE = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2'
@@ -25,9 +25,12 @@ def store(url, small=False):
             '<span><small>Download on the</small>App Store</span></a>')
 
 
-def page(path, title, desc, body, game=None, current=None, image="/assets/sefy-large.png", icon="/assets/sefy.png", extra=""):
+def page(path, title, desc, body, game=None, current=None, image="/assets/brand/og-image.png", icon=None, extra=""):
     links = [("/#games", "Games", "games", ""), ("/loom-pop/", "Loom Pop!", "loom", "opt"), ("/pip-and-pals/", "Pip &amp; Pals", "pip", "opt"),
-             ("/#contact", "Contact", "contact", "")]
+             ("/#about", "About", "about", "opt"), ("/#contact", "Contact", "contact", "")]
+    icons = (f'<link rel="icon" href="{icon}">\n<link rel="apple-touch-icon" href="{icon}">' if icon else
+             '<link rel="icon" href="/favicon.ico" sizes="48x48">\n<link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/favicon-192.png">\n'
+             '<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">')
     nav = "".join(f'<a href="{h}"{" class=" + chr(34) + c + chr(34) if c else ""}{" aria-current=" + chr(34) + "page" + chr(34) if k == current else ""}>{t}</a>'
                   for h, t, k, c in links)
     html = f"""<!doctype html>
@@ -37,24 +40,23 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/sefy-l
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<meta name="theme-color" content="#110a2b">
+<meta name="theme-color" content="#f7f5ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0c19" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="{SITE}{image}">
 <meta property="og:url" content="{SITE}{path}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="{icon}">
-<link rel="apple-touch-icon" href="{icon}">
+{icons}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 {extra}</head>
 <body{f' data-game="{game}"' if game else ""}>
-<div class="sky" aria-hidden="true"><i></i><b></b></div>
 <header class="nav"><div class="wrap"><div class="bar">
-  <a class="logo" href="/"><img src="/assets/sefystudio.png" alt="Sefy Studio" width="160" height="60"></a>
+  <a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Sefy Studio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Sefy Studio" width="300" height="96"></a>
   <nav aria-label="Main">{nav}</nav>
 </div></div></header>
 <main>
@@ -62,13 +64,13 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/sefy-l
 </main>
 <footer><div class="wrap">
   <div class="cols">
-    <div class="brand"><a href="/"><img src="/assets/sefystudio.png" alt="Sefy Studio" width="160" height="60"></a>
-      <p>Cozy, colourful games for iPhone and iPad, made with care by a tiny independent studio.</p></div>
+    <div class="brand"><a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Sefy Studio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Sefy Studio" width="300" height="96"></a>
+      <p>An independent studio making cozy games and apps for iPhone, iPad and the web.</p></div>
     <div><h4>Loom Pop!</h4><ul><li><a href="/loom-pop/">Overview</a></li><li><a href="{LOOM_STORE}">App Store</a></li>
       <li><a href="/loom-pop/support.html">Support</a></li><li><a href="/loom-pop/privacy.html">Privacy</a></li></ul></div>
     <div><h4>Pip &amp; Pals</h4><ul><li><a href="/pip-and-pals/">Overview</a></li><li><a href="/pip-and-pals/play/">Play in browser</a></li>
       <li><a href="{PIP_STORE}">App Store</a></li><li><a href="/pip-and-pals/support.html">Support</a></li><li><a href="/pip-and-pals/privacy.html">Privacy</a></li></ul></div>
-    <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
+    <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/brand/">Brand assets</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
   </div>
   <p class="legal">© <span id="year">2026</span> Sefy Studio. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
 </div></footer>
@@ -86,7 +88,7 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/sefy-l
 def contact(game_name=None):
     what = f"Questions about {game_name}? " if game_name else ""
     return f"""<section id="contact"><div class="wrap">
-  <div class="contact glass reveal">
+  <div class="contact card reveal">
     <div><h2>Say hello</h2><p>{what}Ideas, bugs, press or partnerships: we read every email.</p></div>
     <div class="copy-row"><code>{EMAIL}</code><button class="btn primary" type="button" data-copy="{EMAIL}">Copy email</button></div>
   </div>
@@ -94,61 +96,68 @@ def contact(game_name=None):
 
 
 # ───────────────────────── home ─────────────────────────
+# Everything we ship, one entry each. category: "games" | "apps" | "web". The home page shows category tabs only once
+# two or more categories have something in them; until then it is a plain "Games" grid.
+PRODUCTS = [
+    dict(category="games", cls="loom", name="Loom Pop!", page="/loom-pop/", art="/assets/loom-pop-art.webp", icon="/assets/loom-pop-icon.png",
+         alt="Knitted pattern cards pegged on a yarn line", text="A cozy yarn-sorting puzzle. Tap yarn balls, fill the loom and weave 200+ patterns.",
+         tags=["Puzzle", "iPhone", "Free"], cta=[store(LOOM_STORE), '<a class="btn ghost" href="/loom-pop/">Details</a>']),
+    dict(category="games", cls="pip", name="Pip &amp; Pals: Hide &amp; Seek", page="/pip-and-pals/", art="/assets/pip-and-pals-art.webp",
+         icon="/assets/pip-and-pals-icon.png", alt="Pip, Momo and Ziggy hiding from a drone",
+         text="Morph into objects, dodge the drones and fix the rocket, alone or with up to 3 friends.",
+         tags=["Adventure", "Co-op", "iPhone &amp; iPad", "Web"], cta=[store(PIP_STORE), f'<a class="btn ghost" href="/pip-and-pals/play/">{PLAY} Play in browser</a>']),
+]
+CATEGORIES = [("games", "Games"), ("apps", "Apps"), ("web", "Web apps")]
+
+
+def product_card(p):
+    tags = "".join(f'<span class="chip">{t}</span>' for t in p["tags"])
+    return f"""<article class="game-card card reveal" data-category="{p['category']}">
+      <a class="art" href="{p['page']}"><img src="{p['art']}" alt="{p['alt']}" width="1600" height="685" loading="lazy"></a>
+      <div class="body"><img class="icon" src="{p['icon']}" alt="" width="152" height="152">
+        <div><h3>{p['name']}</h3><p>{p['text']}</p><div class="tags">{tags}</div></div></div>
+      <div class="cta">{"".join(p['cta'])}</div>
+    </article>"""
+
+
+def products_section():
+    used = [(k, t) for k, t in CATEGORIES if any(p["category"] == k for p in PRODUCTS)]
+    title = used[0][1] if len(used) == 1 else "Our work"
+    tabs = ""
+    if len(used) > 1:
+        tabs = '<div class="tabs" role="tablist">' + '<button role="tab" aria-selected="true" data-tab="all">All</button>' + "".join(
+            f'<button role="tab" aria-selected="false" data-tab="{k}">{t}</button>' for k, t in used) + "</div>"
+    return f"""<section id="games"><div class="wrap">
+  <div class="section-head reveal"><h2>{title}</h2>{tabs}</div>
+  <div class="games">{"".join(product_card(p) for p in PRODUCTS)}</div>
+</div></section>"""
+
+
 HOME = f"""
 <section class="hero"><div class="wrap grid">
   <div>
-    <span class="eyebrow">Independent game studio</span>
-    <h1 style="margin-top:16px">Small games,<br><em>big smiles.</em></h1>
-    <p class="lead">Sefy Studio makes cozy, colourful games you can pick up in a minute and keep coming back to: no sign-up, fair to play, and made for everyone in ten languages.</p>
+    <h1>Hi, we're <span>Sefy Studio</span>.</h1>
+    <p class="lead">A small independent studio making cozy games and apps for iPhone, iPad and the web. No accounts, fair to play, in ten languages.</p>
     <div class="actions">
-      <a class="btn primary" href="#games">Meet our games</a>
+      <a class="btn primary" href="#games">See our games</a>
       <a class="btn ghost" href="/pip-and-pals/play/">{PLAY} Play Pip &amp; Pals in your browser</a>
     </div>
-    <div class="facts">
-      <span class="chip"><strong>2</strong> games on the App Store</span>
-      <span class="chip"><strong>10</strong> languages</span>
-      <span class="chip">iPhone &amp; iPad</span>
-      <span class="chip">No accounts, ever</span>
-    </div>
+    <div class="facts"><span><b>2</b> games</span><span><b>10</b> languages</span><span>iPhone, iPad &amp; web</span></div>
   </div>
-  <div class="stage" aria-hidden="true">
-    <div class="halo"></div><div class="ring"></div>
-    <img class="mascot" src="/assets/sefy-large.png" alt="" width="600" height="600">
-    <img class="app a" src="/assets/loom-pop-icon.png" alt="" width="256" height="256">
-    <img class="app b" src="/assets/pip-and-pals-icon.png" alt="" width="256" height="256">
-  </div>
+  <div class="stage" aria-hidden="true"><img class="mascot" src="/assets/brand/sefy-mascot.svg" alt="" width="1540" height="1460"></div>
 </div></section>
 
-<section id="games"><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">Our games</span><h2>Two worlds, one cozy studio</h2>
-    <p>A calming yarn puzzle and a sneaky co-op adventure. Both free to download.</p></div>
-  <div class="games">
-    <article class="game-card loom glass reveal">
-      <a class="art" href="/loom-pop/"><img src="/assets/loom-pop-art.webp" alt="Knitted pattern cards pegged on a yarn line" width="1600" height="685" loading="lazy"></a>
-      <div class="body"><img class="icon" src="/assets/loom-pop-icon.png" alt="" width="152" height="152">
-        <div><h3>Loom Pop!</h3><p>Tap yarn balls, fill the loom and weave 200+ cozy patterns for your customers.</p>
-          <div class="tags"><span class="chip">Puzzle</span><span class="chip">Relaxing</span><span class="chip">iPhone</span></div></div></div>
-      <div class="cta">{store(LOOM_STORE)}<a class="btn ghost" href="/loom-pop/">Explore</a></div>
-    </article>
-    <article class="game-card pip glass reveal">
-      <a class="art" href="/pip-and-pals/"><img src="/assets/pip-and-pals-art.webp" alt="Pip, Momo and Ziggy hiding from a drone" width="1600" height="685" loading="lazy"></a>
-      <div class="body"><img class="icon" src="/assets/pip-and-pals-icon.png" alt="" width="152" height="152">
-        <div><h3>Pip &amp; Pals: Hide &amp; Seek</h3><p>Morph into objects, dodge the drones and fix the rocket, alone or with up to 3 friends.</p>
-          <div class="tags"><span class="chip">Adventure</span><span class="chip">Co-op</span><span class="chip">iPhone &amp; iPad</span><span class="chip">Web</span></div></div></div>
-      <div class="cta">{store(PIP_STORE)}<a class="btn ghost" href="/pip-and-pals/play/">{PLAY} Play now</a></div>
-    </article>
-  </div>
-</div></section>
+{products_section()}
 
 <section id="about"><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">How we make games</span><h2>Cozy on the outside, careful on the inside</h2></div>
+  <div class="section-head reveal"><h2>How we make things</h2></div>
   <div class="values">
-    <div class="value glass reveal"><div class="glyph">♥</div><h3>Calm, not grabby</h3>
-      <p>Soft sounds, gentle haptics and short sessions. Our games are a little break in your day, not a demand on it.</p></div>
-    <div class="value glass reveal"><div class="glyph">✓</div><h3>Fair and private</h3>
+    <div class="value reveal"><h3>Calm, not grabby</h3>
+      <p>Soft sounds, gentle haptics and short sessions. A little break in your day, not a demand on it.</p></div>
+    <div class="value reveal"><h3>Fair and private</h3>
       <p>No accounts and no user database. Your progress stays on your device; rewarded ads are always your choice.</p></div>
-    <div class="value glass reveal"><div class="glyph">★</div><h3>Made for everyone</h3>
-      <p>Every game ships in ten languages, from English and Türkçe to 日本語 and 한국어, with picture-led tutorials.</p></div>
+    <div class="value reveal"><h3>Made for everyone</h3>
+      <p>Every release ships in ten languages, from English and Türkçe to 日本語 and 한국어, with picture-led tutorials.</p></div>
   </div>
 </div></section>
 {contact()}
@@ -157,7 +166,7 @@ HOME = f"""
 # ───────────────────────── Loom Pop ─────────────────────────
 LOOM = f"""
 <section class="ghero"><div class="wrap">
-  <div class="panel glass">
+  <div class="panel card">
     <div class="art"><img src="/assets/loom-pop-art.webp" alt="Knitted pattern cards pegged on yarn lines above a pile of yarn balls" width="1600" height="685"></div>
     <div class="info">
       <img class="icon" src="/assets/loom-pop-icon.png" alt="Loom Pop! app icon" width="224" height="224">
@@ -172,14 +181,14 @@ LOOM = f"""
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">The game</span><h2>Tap, match &amp; weave</h2>
+  <div class="section-head reveal"><h2>Tap, match &amp; weave</h2>
     <p>Easy to learn, endlessly satisfying: every yarn you sort knits its share of a picture on the loom.</p></div>
   <div class="features">
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-2.webp" alt="A finished woven puppy pattern" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-2.webp" alt="A finished woven puppy pattern" width="540" height="1173" loading="lazy"></div>
       <h3>Sort the yarn</h3><p>Pick yarn balls from the pile and send them to the right colour. Soft sounds and a gentle tick when a row is done.</p></article>
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-1.webp" alt="The sticker album with eight collections" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-1.webp" alt="The sticker album with eight collections" width="540" height="1173" loading="lazy"></div>
       <h3>Collect 200+ patterns</h3><p>Fill a sticker album across eight collections, from Kilim Classics and Sweet Shop to Sea Life and Adventure.</p></article>
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-4.webp" alt="A customer waiting for their rug" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-4.webp" alt="A customer waiting for their rug" width="540" height="1173" loading="lazy"></div>
       <h3>Happy customers</h3><p>Weave each order before your customer loses patience, and meet a new customer of the day.</p></article>
   </div>
 </div></section>
@@ -187,9 +196,8 @@ LOOM = f"""
 <section><div class="wrap watch">
   <div class="phone reveal"><video src="img/preview.mp4" poster="img/preview-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Loom Pop! gameplay preview"></video></div>
   <div class="reveal">
-    <span class="eyebrow">See it in motion</span>
-    <h2 style="font-size:clamp(32px,4.6vw,52px);margin-top:12px">A little calm in every level</h2>
-    <p style="color:var(--muted);font-size:18px;margin-top:12px">Grow your yarn shop, decorate the Cozy Corner and the Loom Workshop, keep a win streak going and open a daily gift. Play anywhere, no Wi-Fi needed.</p>
+    <h2>A little calm in every level</h2>
+    <p class="lede">Grow your yarn shop, decorate the Cozy Corner and the Loom Workshop, keep a win streak going and open a daily gift. Play anywhere, no Wi-Fi needed.</p>
     <div class="facts-table">
       <div class="fact"><small>Patterns</small><strong>200+ in 8 collections</strong></div>
       <div class="fact"><small>Devices</small><strong>iPhone, iOS 17+</strong></div>
@@ -200,7 +208,7 @@ LOOM = f"""
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">Screenshots</span><h2>From the App Store</h2></div>
+  <div class="section-head reveal"><h2>From the App Store</h2></div>
   <div class="rail reveal" tabindex="0" aria-label="Screenshots">
     <img src="img/shot-1.webp" alt="Collect 200+ cozy patterns" width="540" height="1173" loading="lazy">
     <img src="img/shot-2.webp" alt="Tap, match and weave" width="540" height="1173" loading="lazy">
@@ -214,9 +222,9 @@ LOOM = f"""
 
 <section><div class="wrap">
   <div class="help">
-    <a class="glass reveal" href="support.html"><b>Support</b><span>Restore No Ads, missing coins, progress and ad choices.</span></a>
-    <a class="glass reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Ads by Google AdMob.</span></a>
-    <a class="glass reveal" href="{LOOM_STORE}"><b>App Store</b><span>Free download for iPhone.</span></a>
+    <a class="card reveal" href="support.html"><b>Support</b><span>Restore No Ads, missing coins, progress and ad choices.</span></a>
+    <a class="card reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Ads by Google AdMob.</span></a>
+    <a class="card reveal" href="{LOOM_STORE}"><b>App Store</b><span>Free download for iPhone.</span></a>
   </div>
 </div></section>
 {contact("Loom Pop!")}
@@ -225,7 +233,7 @@ LOOM = f"""
 # ───────────────────────── Pip & Pals ─────────────────────────
 PIP = f"""
 <section class="ghero"><div class="wrap">
-  <div class="panel glass">
+  <div class="panel card">
     <div class="art"><img src="/assets/pip-and-pals-art.webp" alt="Pip, Momo and Ziggy hiding behind a bush from a drone" width="1600" height="685"></div>
     <div class="info">
       <img class="icon" src="/assets/pip-and-pals-icon.png" alt="Pip &amp; Pals app icon" width="224" height="224">
@@ -240,14 +248,14 @@ PIP = f"""
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">The game</span><h2>Hide in plain sight</h2>
+  <div class="section-head reveal"><h2>Hide in plain sight</h2>
     <p>Become a bush, a barrel, even a cow. Stay still while the drones sweep past, then sneak on to the next task.</p></div>
   <div class="features">
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-1.webp" alt="Pip hiding as a bush" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-1.webp" alt="Pip hiding as a bush" width="540" height="1173" loading="lazy"></div>
       <h3>Morph &amp; hide</h3><p>Turn into the objects around you and hold your breath. Every world brings a new drone with its own way of hunting.</p></article>
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-2.webp" alt="Three friends playing together" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-2.webp" alt="Three friends playing together" width="540" height="1173" loading="lazy"></div>
       <h3>Play with friends</h3><p>Team up with up to 3 pals: share a room code, split the tasks and revive each other. Works across phone, tablet and web.</p></article>
-    <article class="feature glass reveal"><div class="shot"><img src="img/shot-3.webp" alt="Running from a drone" width="540" height="1173" loading="lazy"></div>
+    <article class="feature card reveal"><div class="shot"><img src="img/shot-3.webp" alt="Running from a drone" width="540" height="1173" loading="lazy"></div>
       <h3>Spotted? Run!</h3><p>Dash, dodge and shake off the drones, crack secret codes and pull the right levers to fix the rocket home.</p></article>
   </div>
 </div></section>
@@ -255,9 +263,8 @@ PIP = f"""
 <section><div class="wrap watch">
   <div class="phone reveal"><video src="img/preview.mp4" poster="img/preview-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Pip &amp; Pals gameplay preview"></video></div>
   <div class="reveal">
-    <span class="eyebrow">See it in motion</span>
-    <h2 style="font-size:clamp(32px,4.6vw,52px);margin-top:12px">21 levels in 7 worlds</h2>
-    <p style="color:var(--muted);font-size:18px;margin-top:12px">From sunny meadows to a moonlit night: clever tasks, secret codes and a rocket to fix. Play the full game right here in your browser, or get the app for iPhone and iPad.</p>
+    <h2>21 levels in 7 worlds</h2>
+    <p class="lede">From sunny meadows to a moonlit night: clever tasks, secret codes and a rocket to fix. Play the full game right here in your browser, or get the app for iPhone and iPad.</p>
     <div class="facts-table">
       <div class="fact"><small>Players</small><strong>Solo or co-op for 2–3</strong></div>
       <div class="fact"><small>Platforms</small><strong>iPhone, iPad &amp; web</strong></div>
@@ -269,7 +276,7 @@ PIP = f"""
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">Screenshots</span><h2>From the App Store</h2></div>
+  <div class="section-head reveal"><h2>From the App Store</h2></div>
   <div class="rail reveal" tabindex="0" aria-label="Screenshots">
     <img src="img/shot-1.webp" alt="Hide in plain sight" width="540" height="1173" loading="lazy">
     <img src="img/shot-2.webp" alt="Play with friends" width="540" height="1173" loading="lazy">
@@ -284,9 +291,9 @@ PIP = f"""
 
 <section><div class="wrap">
   <div class="help">
-    <a class="glass reveal" href="support.html"><b>Support</b><span>Restore Plus, co-op tips and progress questions.</span></a>
-    <a class="glass reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Temporary co-op rooms.</span></a>
-    <a class="glass reveal" href="join.html"><b>Join a room</b><span>Got an invite link? Open it here.</span></a>
+    <a class="card reveal" href="support.html"><b>Support</b><span>Restore Plus, co-op tips and progress questions.</span></a>
+    <a class="card reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Temporary co-op rooms.</span></a>
+    <a class="card reveal" href="join.html"><b>Join a room</b><span>Got an invite link? Open it here.</span></a>
   </div>
 </div></section>
 {contact("Pip &amp; Pals")}
@@ -294,7 +301,7 @@ PIP = f"""
 
 
 def doc(title, inner):
-    return f'<div class="wrap"><article class="doc glass">{inner.strip()}</article></div>'
+    return f'<div class="wrap"><article class="doc card">{inner.strip()}</article></div>'
 
 
 LOOM_SUPPORT = f"""
@@ -393,9 +400,22 @@ PIP_JOIN = f"""
 </script>
 """
 
+BRAND = """
+<h1>Brand assets</h1>
+<p>Logos and icons of Sefy Studio for press and partners. Please keep the colours and proportions as they are.</p>
+<div class="brand-grid">
+  <a class="card" href="/assets/brand/sefystudio-logo-horizontal.svg"><img src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Horizontal logo"><span>Horizontal logo · SVG</span></a>
+  <a class="card dark" href="/assets/brand/sefystudio-logo-horizontal-white.svg"><img src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Horizontal logo, white"><span>For dark backgrounds · SVG</span></a>
+  <a class="card" href="/assets/brand/sefystudio-logo.png"><img src="/assets/brand/sefystudio-logo.png" alt="Stacked logo"><span>Stacked logo · PNG</span></a>
+  <a class="card" href="/assets/brand/sefy-avatar.png"><img src="/assets/brand/sefy-avatar.png" alt="Avatar" style="border-radius:50%;max-width:180px;margin:auto"><span>Avatar · PNG</span></a>
+</div>
+<h2>Colours</h2>
+<p>Violet #7B44FF · Orange #FFA23A · Sunny #FFC765 · Deep Blue #3F3BF2 · Ink #14101F · Paper #F7F5FF</p>
+"""
+
 NOTFOUND = """
-<div class="wrap"><article class="doc glass" style="text-align:center">
-  <img src="/assets/sefy-large.png" alt="" width="160" height="160" style="margin:0 auto 12px;width:160px">
+<div class="wrap"><article class="doc card" style="text-align:center">
+  <img src="/assets/brand/sefy-mascot.svg" alt="" width="200" height="190" style="margin:0 auto 12px;width:200px">
   <h1>Oops, a dropped stitch!</h1>
   <p>The page you were looking for could not be found.</p>
   <p style="margin-top:22px"><a class="btn primary" href="/">Back to Sefy Studio</a></p>
@@ -403,7 +423,7 @@ NOTFOUND = """
 """
 
 if __name__ == "__main__":
-    page("/", "Sefy Studio: cozy games for iPhone and iPad", "Sefy Studio makes cozy, colourful games: Loom Pop! and Pip & Pals: Hide & Seek. Free on the App Store.", HOME, current="games")
+    page("/", "Sefy Studio", "Sefy Studio is an independent studio making cozy games and apps: Loom Pop! and Pip & Pals: Hide & Seek.", HOME)
     page("/loom-pop/", "Loom Pop! Yarn Sort Puzzle", "A cozy yarn-sorting puzzle for iPhone. Tap yarn balls, fill the loom and weave 200+ colourful patterns.", LOOM,
          game="loom", current="loom", image="/assets/loom-pop-art.webp", icon="/assets/loom-pop-icon.png", extra='<meta name="apple-itunes-app" content="app-id=6822636298">\n')
     page("/pip-and-pals/", "Pip & Pals: Hide & Seek", "Hide from the drones, finish the tasks and fix the rocket, alone or with friends. Play free in your browser or on iPhone and iPad.", PIP,
@@ -414,4 +434,5 @@ if __name__ == "__main__":
     page("/pip-and-pals/privacy.html", "Pip & Pals Privacy Policy", "Privacy policy of Pip & Pals: Hide & Seek by Sefy Studio.", doc("", PIP_PRIVACY), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
     page("/pip-and-pals/join.html", "Join a Pip & Pals room", "Your friend invited you to a Pip & Pals co-op room.", doc("", PIP_JOIN), game="pip", current="pip",
          image="/assets/pip-and-pals-art.webp", icon="/assets/pip-and-pals-icon.png")
+    page("/brand/", "Brand assets · Sefy Studio", "Sefy Studio logos and icons for press and partners.", doc("", BRAND))
     page("/404.html", "Page not found · Sefy Studio", "This page could not be found.", NOTFOUND)
