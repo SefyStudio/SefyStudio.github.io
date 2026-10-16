@@ -112,7 +112,7 @@ CATEGORIES = [("games", "Games"), ("apps", "Apps"), ("web", "Web apps")]
 
 def product_card(p):
     tags = "".join(f'<span class="chip">{t}</span>' for t in p["tags"])
-    return f"""<article class="game-card card reveal" data-category="{p['category']}">
+    return f"""<article class="game-card card reveal" data-tilt data-glow data-category="{p['category']}">
       <a class="art" href="{p['page']}"><img src="{p['art']}" alt="{p['alt']}" width="1600" height="685" loading="lazy"></a>
       <div class="body"><img class="icon" src="{p['icon']}" alt="" width="152" height="152">
         <div><h3>{p['name']}</h3><p>{p['text']}</p><div class="tags">{tags}</div></div></div>
@@ -133,33 +133,57 @@ def products_section():
 </div></section>"""
 
 
+SHOTS = [f"/loom-pop/img/shot-{i}.webp" for i in (1, 2, 3, 5, 6)] + [f"/pip-and-pals/img/shot-{i}.webp" for i in (1, 2, 3, 4, 7)]
+MARQUEE = "".join(f'<img src="{u}" alt="" width="540" height="1173" loading="lazy">' for u in SHOTS[0::2] + SHOTS[1::2])
+
 HOME = f"""
-<section class="hero"><div class="wrap grid">
-  <div>
-    <h1>Hi, we're <span>Sefy Studio</span>.</h1>
+<section class="hero"><div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap grid">
+  <div class="hero-copy">
+    <h1>Hi, we're <span class="shine">Sefy Studio</span>.</h1>
     <p class="lead">A small independent studio making cozy games and apps for iPhone, iPad and the web. No accounts, fair to play, in ten languages.</p>
     <div class="actions">
       <a class="btn primary" href="#games">See our games</a>
       <a class="btn ghost" href="/pip-and-pals/play/">{PLAY} Play Pip &amp; Pals in your browser</a>
     </div>
-    <div class="facts"><span><b>2</b> games</span><span><b>10</b> languages</span><span>iPhone, iPad &amp; web</span></div>
   </div>
-  <div class="stage" aria-hidden="true"><img class="mascot" src="/assets/brand/sefy-mascot.svg" alt="" width="1540" height="1460"></div>
+  <div class="stage" aria-hidden="true" data-parallax>
+    <div class="burst"></div>
+    <img class="mascot" data-depth="18" src="/assets/brand/sefy-mascot.svg" alt="" width="1540" height="1460">
+    <img class="float f1" data-depth="40" src="/assets/loom-pop-icon.png" alt="" width="152" height="152">
+    <img class="float f2" data-depth="55" src="/assets/pip-and-pals-icon.png" alt="" width="152" height="152">
+    <img class="float f3" data-depth="30" src="/loom-pop/img/motif-sea.png" alt="" width="160" height="160">
+    <img class="float f4" data-depth="65" src="/loom-pop/img/motif-sweets.png" alt="" width="160" height="160">
+  </div>
 </div></section>
+
+<div class="marquee-wrap" aria-hidden="true"><div class="marquee"><div class="track">{MARQUEE}{MARQUEE}</div></div></div>
 
 {products_section()}
 
 <section id="about"><div class="wrap">
-  <div class="section-head reveal"><h2>How we make things</h2></div>
-  <div class="values">
-    <div class="value reveal"><h3>Calm, not grabby</h3>
-      <p>Soft sounds, gentle haptics and short sessions. A little break in your day, not a demand on it.</p></div>
-    <div class="value reveal"><h3>Fair and private</h3>
-      <p>No accounts and no user database. Your progress stays on your device; rewarded ads are always your choice.</p></div>
-    <div class="value reveal"><h3>Made for everyone</h3>
-      <p>Every release ships in ten languages, from English and Türkçe to 日本語 and 한국어, with picture-led tutorials.</p></div>
+  <div class="section-head reveal"><h2>Small studio.<br>Big standards.</h2>
+    <p>A tiny team, two games and a long list of things we refuse to cut corners on.</p></div>
+  <div class="bento">
+    <div class="tile big card reveal" data-glow><div class="num"><b data-count="200">200</b>+</div>
+      <h3>hand-drawn patterns</h3><p>Every motif in Loom Pop! is drawn stitch by stitch and woven in eight collections, from Kilim Classics to Sea Life.</p>
+      <div class="motifs"><img src="/loom-pop/img/motif-kilim.png" alt="" width="160" height="160" loading="lazy"><img src="/loom-pop/img/motif-fruit.png" alt="" width="160" height="160" loading="lazy"><img src="/loom-pop/img/motif-garden.png" alt="" width="160" height="160" loading="lazy"><img src="/loom-pop/img/motif-sweets.png" alt="" width="160" height="160" loading="lazy"><img src="/loom-pop/img/motif-sea.png" alt="" width="160" height="160" loading="lazy"><img src="/loom-pop/img/motif-home.png" alt="" width="160" height="160" loading="lazy"><img src="/loom-pop/img/motif-nature.png" alt="" width="160" height="160" loading="lazy"><img src="/loom-pop/img/motif-adventure.png" alt="" width="160" height="160" loading="lazy"></div></div>
+    <div class="tile card reveal" data-glow><div class="num"><b data-count="10">10</b></div>
+      <h3>languages on day one</h3><p>English, Türkçe, Español, Português, Deutsch, Français, Italiano, 日本語 and 한국어.</p></div>
+    <div class="tile card reveal" data-glow><div class="num"><b data-count="3">3</b></div>
+      <h3>friends, one room</h3><p>Real-time co-op in Pip &amp; Pals that works across iPhone, iPad and the browser.</p></div>
+    <div class="tile card reveal" data-glow><div class="num"><b data-count="0">0</b></div>
+      <h3>accounts needed</h3><p>No sign-up and no user database. Your progress belongs on your device.</p></div>
+    <div class="tile card reveal" data-glow><div class="num"><b data-count="1">1</b></div>
+      <h3>tap to play</h3><p>Pip &amp; Pals runs right in your browser: no download, same game as the app.</p></div>
+    <div class="tile wide card reveal" data-glow><h3>We tune the feel until it's right.</h3>
+      <p>Every tap, sound and haptic goes through round after round of playtests. If a level feels unfair or a sound gets tiring, it changes before it ships.</p></div>
   </div>
 </div></section>
+
+<section class="next"><div class="wrap"><div class="next-card card reveal" data-glow>
+  <div><h2>More on the loom.</h2><p>New games and our first apps are in the works. Want to hear first, test early or work with us? Say hi.</p></div>
+  <a class="btn primary" href="#contact">Get in touch</a>
+</div></div></section>
 {contact()}
 """
 

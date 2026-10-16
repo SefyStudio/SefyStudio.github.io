@@ -26,3 +26,41 @@
   });
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 })();
+// Motion layer: pointer parallax in the hero, tilt + spotlight on cards, count-up numbers.
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var fine = window.matchMedia('(pointer: fine)').matches;
+  var stage = document.querySelector('[data-parallax]');
+  if (stage && fine) {
+    var hero = stage.closest('section');
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      stage.querySelectorAll('[data-depth]').forEach(function (el) {
+        var d = +el.getAttribute('data-depth'); el.style.transform = 'translate(' + (-x * d) + 'px,' + (-y * d) + 'px)';
+      });
+    });
+    hero.addEventListener('pointerleave', function () { stage.querySelectorAll('[data-depth]').forEach(function (el) { el.style.transform = ''; }); });
+  }
+  document.querySelectorAll('[data-glow]').forEach(function (el) {
+    el.addEventListener('pointermove', function (e) {
+      var r = el.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      el.style.setProperty('--mx', x + 'px'); el.style.setProperty('--my', y + 'px');
+      if (fine && el.hasAttribute('data-tilt')) {
+        el.style.setProperty('--ry', ((x / r.width - .5) * 8).toFixed(2) + 'deg');
+        el.style.setProperty('--rx', ((.5 - y / r.height) * 8).toFixed(2) + 'deg');
+      }
+    });
+    el.addEventListener('pointerleave', function () { el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+  });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io.unobserve(e.target);
+        var el = e.target, to = +el.getAttribute('data-count'), t0 = performance.now();
+        if (!to) return;
+        (function step(t) { var k = Math.min(1, (t - t0) / 1200); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0);
+      });
+    }, { threshold: .6 });
+    document.querySelectorAll('[data-count]').forEach(function (el) { io.observe(el); });
+  }
+})();
