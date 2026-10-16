@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds every page of the Sefy Studio site from one template (nav, footer, head), styled by assets/site.css.
+"""Builds every page of the SefyStudio site from one template (nav, footer, head), styled by assets/site.css.
 
     python3 _build.py
 
@@ -24,7 +24,7 @@ PLAY = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path
 def live_mascot():
     """The mascot SVG inlined with hooks for CSS/JS: blinking eyes that follow the pointer, pulsing rays, a breathing body."""
     svg = open(os.path.join(ROOT, "assets/brand/sefy-mascot.svg"), encoding="utf-8").read()
-    svg = svg.replace('<svg ', '<svg class="mascot" role="img" aria-label="Sefy, the Sefy Studio mascot" ', 1)
+    svg = svg.replace('<svg ', '<svg class="mascot" role="img" aria-label="Sefy, the SefyStudio mascot" ', 1)
     svg = re.sub(r'width="\d+" height="\d+"', '', svg, count=1)
     eyes = re.findall(r'<rect [^>]*fill="#16112A"[^>]*/>', svg)
     for e in eyes:
@@ -35,6 +35,12 @@ def live_mascot():
     i = svg.index('<g class="rays-wrap">'); j = svg.index('</g>', i) + 4
     svg = svg[:j] + '</g>' + svg[j:]
     return svg
+
+
+def ver(rel):
+    """Cache-busting query from the file's content, so browsers pick up CSS/JS changes at once."""
+    import hashlib
+    return hashlib.sha1(open(os.path.join(ROOT, rel), "rb").read()).hexdigest()[:8]
 
 
 def store(url, small=False):
@@ -69,11 +75,11 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/brand/
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={ver('assets/site.css')}">
 {extra}</head>
 <body{f' data-game="{game}"' if game else ""}>
 <header class="nav"><div class="wrap"><div class="bar">
-  <a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Sefy Studio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Sefy Studio" width="300" height="96"></a>
+  <a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="SefyStudio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="SefyStudio" width="300" height="96"></a>
   <nav aria-label="Main">{nav}</nav>
 </div></div></header>
 <main>
@@ -81,7 +87,7 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/brand/
 </main>
 <footer><div class="wrap">
   <div class="cols">
-    <div class="brand"><a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Sefy Studio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Sefy Studio" width="300" height="96"></a>
+    <div class="brand"><a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="SefyStudio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="SefyStudio" width="300" height="96"></a>
       <p>An independent studio making cozy games and apps for iPhone, iPad and the web.</p></div>
     <div><h4>Loom Pop!</h4><ul><li><a href="/loom-pop/">Overview</a></li><li><a href="{LOOM_STORE}">App Store</a></li>
       <li><a href="/loom-pop/support.html">Support</a></li><li><a href="/loom-pop/privacy.html">Privacy</a></li></ul></div>
@@ -89,9 +95,9 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/brand/
       <li><a href="{PIP_STORE}">App Store</a></li><li><a href="/pip-and-pals/support.html">Support</a></li><li><a href="/pip-and-pals/privacy.html">Privacy</a></li></ul></div>
     <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/brand/">Brand assets</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
   </div>
-  <p class="legal">© <span id="year">2026</span> Sefy Studio. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+  <p class="legal">© <span id="year">2026</span> SefyStudio. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
 </div></footer>
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v={ver('assets/site.js')}" defer></script>
 </body>
 </html>
 """
@@ -156,7 +162,7 @@ MARQUEE = "".join(f'<img src="{u}" alt="" width="540" height="1173" loading="laz
 HOME = f"""
 <section class="hero"><div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap grid">
   <div class="hero-copy">
-    <h1>Hi, we're <span class="shine">Sefy Studio</span>.</h1>
+    <h1>Hi, we're <span class="shine">SefyStudio</span>.</h1>
     <p class="lead">A small independent studio making cozy games and apps for iPhone, iPad and the web. No accounts, fair to play, in ten languages.</p>
     <div class="actions">
       <a class="btn primary" href="#games">See our games</a>
@@ -356,7 +362,7 @@ LOOM_SUPPORT = f"""
 
 LOOM_PRIVACY = f"""
 <h1>Privacy Policy</h1>
-<p><small>Loom Pop! · Last updated: October 15, 2026 · Developer: Sefy Studio · Contact: <a href="mailto:{EMAIL}">{EMAIL}</a></small></p>
+<p><small>Loom Pop! · Last updated: October 15, 2026 · Developer: SefyStudio · Contact: <a href="mailto:{EMAIL}">{EMAIL}</a></small></p>
 <h2>The short version</h2>
 <p>There are no accounts and no sign-up. We do not run servers or a user database, and we do not collect your name, email or contacts. Your progress stays on your device (and in your own iCloud). The game shows ads through Google AdMob unless you buy No Ads.</p>
 <h2>What stays on your device</h2>
@@ -394,7 +400,7 @@ PIP_SUPPORT = f"""
 
 PIP_PRIVACY = f"""
 <h1>Privacy Policy</h1>
-<p><small>Pip &amp; Pals: Hide &amp; Seek · Last updated: October 6, 2026 · Developer: Sefy Studio · Contact: <a href="mailto:{EMAIL}">{EMAIL}</a></small></p>
+<p><small>Pip &amp; Pals: Hide &amp; Seek · Last updated: October 6, 2026 · Developer: SefyStudio · Contact: <a href="mailto:{EMAIL}">{EMAIL}</a></small></p>
 <h2>The short version</h2>
 <p>There are no accounts and no sign-up. We do not run a user database. Your game progress stays on your device. The game shows ads (through Google AdMob) in the free version.</p>
 <h2>What stays on your device</h2>
@@ -436,7 +442,7 @@ PIP_JOIN = f"""
 
 BRAND = """
 <h1>Brand assets</h1>
-<p>Logos and icons of Sefy Studio for press and partners. Please keep the colours and proportions as they are.</p>
+<p>Logos and icons of SefyStudio for press and partners. Please keep the colours and proportions as they are.</p>
 <div class="brand-grid">
   <a class="card" href="/assets/brand/sefystudio-logo-horizontal.svg"><img src="/assets/brand/sefystudio-logo-horizontal.svg" alt="Horizontal logo"><span>Horizontal logo · SVG</span></a>
   <a class="card dark" href="/assets/brand/sefystudio-logo-horizontal-white.svg"><img src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="Horizontal logo, white"><span>For dark backgrounds · SVG</span></a>
@@ -452,21 +458,21 @@ NOTFOUND = """
   <img src="/assets/brand/sefy-mascot.svg" alt="" width="200" height="190" style="margin:0 auto 12px;width:200px">
   <h1>Oops, a dropped stitch!</h1>
   <p>The page you were looking for could not be found.</p>
-  <p style="margin-top:22px"><a class="btn primary" href="/">Back to Sefy Studio</a></p>
+  <p style="margin-top:22px"><a class="btn primary" href="/">Back to SefyStudio</a></p>
 </article></div>
 """
 
 if __name__ == "__main__":
-    page("/", "Sefy Studio", "Sefy Studio is an independent studio making cozy games and apps: Loom Pop! and Pip & Pals: Hide & Seek.", HOME)
+    page("/", "SefyStudio", "SefyStudio is an independent studio making cozy games and apps: Loom Pop! and Pip & Pals: Hide & Seek.", HOME)
     page("/loom-pop/", "Loom Pop! Yarn Sort Puzzle", "A cozy yarn-sorting puzzle for iPhone. Tap yarn balls, fill the loom and weave 200+ colourful patterns.", LOOM,
          game="loom", current="loom", image="/assets/loom-pop-art.webp", icon="/assets/loom-pop-icon.png", extra='<meta name="apple-itunes-app" content="app-id=6822636298">\n')
     page("/pip-and-pals/", "Pip & Pals: Hide & Seek", "Hide from the drones, finish the tasks and fix the rocket, alone or with friends. Play free in your browser or on iPhone and iPad.", PIP,
          game="pip", current="pip", image="/assets/pip-and-pals-art.webp", icon="/assets/pip-and-pals-icon.png", extra='<meta name="apple-itunes-app" content="app-id=6819880110">\n')
     page("/loom-pop/support.html", "Loom Pop! Support", "Help with Loom Pop!: purchases, progress and ad choices.", doc("", LOOM_SUPPORT), game="loom", current="loom", icon="/assets/loom-pop-icon.png")
-    page("/loom-pop/privacy.html", "Loom Pop! Privacy Policy", "Privacy policy of Loom Pop! by Sefy Studio.", doc("", LOOM_PRIVACY), game="loom", current="loom", icon="/assets/loom-pop-icon.png")
+    page("/loom-pop/privacy.html", "Loom Pop! Privacy Policy", "Privacy policy of Loom Pop! by SefyStudio.", doc("", LOOM_PRIVACY), game="loom", current="loom", icon="/assets/loom-pop-icon.png")
     page("/pip-and-pals/support.html", "Pip & Pals Support", "Help with Pip & Pals: purchases, progress and co-op.", doc("", PIP_SUPPORT), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
-    page("/pip-and-pals/privacy.html", "Pip & Pals Privacy Policy", "Privacy policy of Pip & Pals: Hide & Seek by Sefy Studio.", doc("", PIP_PRIVACY), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
+    page("/pip-and-pals/privacy.html", "Pip & Pals Privacy Policy", "Privacy policy of Pip & Pals: Hide & Seek by SefyStudio.", doc("", PIP_PRIVACY), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
     page("/pip-and-pals/join.html", "Join a Pip & Pals room", "Your friend invited you to a Pip & Pals co-op room.", doc("", PIP_JOIN), game="pip", current="pip",
          image="/assets/pip-and-pals-art.webp", icon="/assets/pip-and-pals-icon.png")
-    page("/brand/", "Brand assets · Sefy Studio", "Sefy Studio logos and icons for press and partners.", doc("", BRAND))
-    page("/404.html", "Page not found · Sefy Studio", "This page could not be found.", NOTFOUND)
+    page("/brand/", "Brand assets · SefyStudio", "SefyStudio logos and icons for press and partners.", doc("", BRAND))
+    page("/404.html", "Page not found · SefyStudio", "This page could not be found.", NOTFOUND)

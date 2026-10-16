@@ -1,4 +1,4 @@
-# Sefy Studio — https://sefystudio.github.io/
+# SefyStudio — https://sefystudio.github.io/
 User-agent: *
 Allow: /
 

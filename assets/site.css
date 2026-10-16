@@ -1,4 +1,4 @@
-/* Sefy Studio site, identity v2 (2026-10-16). Paper and ink with the brand violet, orange from the mascot,
+/* SefyStudio site, identity v2 (2026-10-16). Paper and ink with the brand violet, orange from the mascot,
    one accent per game (data-game on <body>). Light by default, dark when the device asks for it. */
 :root {
   --bg: #f7f5ff;
@@ -204,6 +204,11 @@ footer .legal { color: var(--dim); font-size: 13px; margin-top: 36px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal.pending { opacity: 1; transform: none; }
+  .stage .eye { animation: blink 5.5s 1.4s infinite !important; }
+  .stage .mascot { animation: breathe 5s 1s ease-in-out infinite !important; }
+  .rays-wrap { animation: rays 2.6s ease-in-out infinite !important; }
+  .stage.happy .eye { animation: blink2 .5s 1 !important; }
+  .eyes { transition: transform .25s ease-out !important; }
 }
 .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
 .brand-grid a { display: flex; flex-direction: column; gap: 14px; padding: 24px; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; justify-content: space-between; }

@@ -1,4 +1,4 @@
-# Sefy Studio site
+# SefyStudio site
 
 Live at https://sefystudio.github.io (GitHub Pages, branch `main`).
 
