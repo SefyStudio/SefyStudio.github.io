@@ -50,7 +50,7 @@ def store(url, small=False):
 
 
 def page(path, title, desc, body, game=None, current=None, image="/assets/brand/og-image.png", icon=None, extra=""):
-    links = [("/#games", "Games", "games", ""), ("/loom-pop/", "Loom Pop!", "loom", "opt"), ("/pip-and-pals/", "Pip &amp; Pals", "pip", "opt"),
+    links = [("/#games", "Games", "games", ""), ("/loom-pop/", "Loom Pop!", "loom", "opt"), ("/pip-and-pals/", "Pip &amp; Pals", "pip", "opt"), ("/mix-bar/", "Mix Bar", "mix", "opt"),
              ("/#about", "About", "about", "opt"), ("/#contact", "Contact", "contact", "")]
     icons = (f'<link rel="icon" href="{icon}">\n<link rel="apple-touch-icon" href="{icon}">' if icon else
              '<link rel="icon" href="/favicon.ico" sizes="48x48">\n<link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/favicon-192.png">\n'
@@ -94,6 +94,7 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/brand/
       <li><a href="/loom-pop/support.html">Support</a></li><li><a href="/loom-pop/privacy.html">Privacy</a></li></ul></div>
     <div><h4>Pip &amp; Pals</h4><ul><li><a href="/pip-and-pals/">Overview</a></li><li><a href="/pip-and-pals/play/">Play in browser</a></li>
       <li><a href="{PIP_STORE}">App Store</a></li><li><a href="/pip-and-pals/support.html">Support</a></li><li><a href="/pip-and-pals/privacy.html">Privacy</a></li></ul></div>
+    <div><h4>Mix Bar</h4><ul><li><a href="/mix-bar/">Overview</a></li><li><a href="/mix-bar/support.html">Support</a></li><li><a href="/mix-bar/privacy.html">Privacy</a></li></ul></div>
     <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/brand/">Brand assets</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
   </div>
   <p class="legal">© <span id="year">2026</span> SefyStudio. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
@@ -130,6 +131,9 @@ PRODUCTS = [
          icon="/assets/pip-and-pals-icon.png", alt="Pip, Momo and Ziggy hiding from a drone",
          text="Morph into objects, dodge the drones and fix the rocket, alone or with up to 3 friends.",
          tags=["Adventure", "Co-op", "iPhone &amp; iPad", "Web"], cta=[store(PIP_STORE), f'<a class="btn ghost" href="/pip-and-pals/play/">{PLAY} Play in browser</a>']),
+    dict(category="games", cls="mix", name="Mix Bar: Water Sort Puzzle", page="/mix-bar/", art="/assets/mix-bar-art.webp", icon="/assets/mix-bar-icon.png",
+         alt="The Mix Bar logo between glasses of soda", text="Pour, mix and serve! A water sort puzzle where flavours mix when you pour them.",
+         tags=["Puzzle", "iPhone", "Free", "Coming soon"], cta=['<a class="btn ghost" href="/mix-bar/">Details</a>']),
 ]
 CATEGORIES = [("games", "Games"), ("apps", "Apps"), ("web", "Web apps")]
 
@@ -536,7 +540,7 @@ NOTFOUND = """
 """
 
 if __name__ == "__main__":
-    page("/", "SefyStudio", "SefyStudio is an independent studio making cozy games and apps: Loom Pop! and Pip & Pals: Hide & Seek.", HOME)
+    page("/", "SefyStudio", "SefyStudio is an independent studio making cozy games and apps: Loom Pop!, Pip & Pals: Hide & Seek and Mix Bar.", HOME)
     page("/loom-pop/", "Loom Pop! Yarn Sort Puzzle", "A cozy yarn-sorting puzzle for iPhone. Tap yarn balls, fill the loom and weave 200+ colourful patterns.", LOOM,
          game="loom", current="loom", image="/assets/loom-pop-art.webp", icon="/assets/loom-pop-icon.png", extra='<meta name="apple-itunes-app" content="app-id=6822636298">\n')
     page("/pip-and-pals/", "Pip & Pals: Hide & Seek", "Hide from the drones, finish the tasks and fix the rocket, alone or with friends. Play free in your browser or on iPhone and iPad.", PIP,
@@ -544,9 +548,9 @@ if __name__ == "__main__":
     page("/loom-pop/support.html", "Loom Pop! Support", "Help with Loom Pop!: purchases, progress and ad choices.", doc("", LOOM_SUPPORT), game="loom", current="loom", icon="/assets/loom-pop-icon.png")
     page("/loom-pop/privacy.html", "Loom Pop! Privacy Policy", "Privacy policy of Loom Pop! by SefyStudio.", doc("", LOOM_PRIVACY), game="loom", current="loom", icon="/assets/loom-pop-icon.png")
     page("/mix-bar/", "Mix Bar: Water Sort Puzzle", "Pour, mix and serve: a water sort puzzle where flavours mix when you pour them. Free for iPhone.", MIX,
-         image="/assets/mix-bar-art.webp", icon="/assets/mix-bar-icon.png")
-    page("/mix-bar/support.html", "Mix Bar Support", "Help with Mix Bar: how to play, purchases, progress and ad choices.", doc("", MIX_SUPPORT), icon="/assets/mix-bar-icon.png")
-    page("/mix-bar/privacy.html", "Mix Bar Privacy Policy", "Privacy policy of Mix Bar: Water Sort Puzzle by SefyStudio.", doc("", MIX_PRIVACY), icon="/assets/mix-bar-icon.png")
+         current="mix", image="/assets/mix-bar-art.webp", icon="/assets/mix-bar-icon.png")
+    page("/mix-bar/support.html", "Mix Bar Support", "Help with Mix Bar: how to play, purchases, progress and ad choices.", doc("", MIX_SUPPORT), current="mix", icon="/assets/mix-bar-icon.png")
+    page("/mix-bar/privacy.html", "Mix Bar Privacy Policy", "Privacy policy of Mix Bar: Water Sort Puzzle by SefyStudio.", doc("", MIX_PRIVACY), current="mix", icon="/assets/mix-bar-icon.png")
     # the first Mix Bar build links /mix-bar/support/ and /mix-bar/privacy/: forward them
     for old in ("support", "privacy"):
         os.makedirs(os.path.join(ROOT, "mix-bar", old), exist_ok=True)
