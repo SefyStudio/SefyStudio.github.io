@@ -14,6 +14,7 @@ SITE = "https://sefystudio.com"
 EMAIL = "support@sefystudio.com"
 LOOM_STORE = "https://apps.apple.com/app/id6822636298"
 PIP_STORE = "https://apps.apple.com/app/id6819880110"
+MIX_STORE = "https://apps.apple.com/app/id6823995084"
 APPLE = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2'
          '-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 '
          '3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-4.2zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 '
@@ -386,6 +387,78 @@ LOOM_PRIVACY = f"""
 <p style="margin-top:28px"><a class="btn ghost small" href="support.html">Support</a> <a class="btn ghost small" href="./">Loom Pop! home</a></p>
 """
 
+# ───────────────────────── Mix Bar ─────────────────────────
+MIX = f"""
+<section class="ghero"><div class="wrap">
+  <div class="panel card">
+    <div class="art"><img src="/assets/mix-bar-art.webp" alt="The Mix Bar logo between glasses of soda" width="1600" height="600"></div>
+    <div class="info">
+      <img class="icon" src="/assets/mix-bar-icon.png" alt="Mix Bar app icon" width="224" height="224">
+      <div>
+        <h1>Mix Bar <span>Water Sort Puzzle</span></h1>
+        <p class="tagline">Pour, mix and serve! A water sort puzzle with a twist: flavours mix when you pour them. Cherry on Lemonade makes Orange, and every full glass goes to the customer who ordered it.</p>
+        <div class="meta"><span class="chip">Free</span><span class="chip">iPhone</span><span class="chip">10 languages</span><span class="chip">Plays offline</span></div>
+      </div>
+      <div class="actions"><span class="btn ghost small" aria-disabled="true">Coming soon to the App Store</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="help">
+    <a class="card reveal" href="support.html"><b>Support</b><span>How to play, purchases, progress and ad choices.</span></a>
+    <a class="card reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Ads by Google AdMob.</span></a>
+  </div>
+</div></section>
+{contact("Mix Bar")}
+"""
+
+MIX_SUPPORT = f"""
+<h1>Support</h1>
+<p>Something not working, an idea, or a level you love? Email <a href="mailto:{EMAIL}">{EMAIL}</a> (please add your iPhone model and the level number). We answer within a few days.</p>
+<h2>How do I play?</h2>
+<p>Tap a glass, then tap another glass to pour. A glass full of one flavour goes to the customer who ordered it. Pour Cherry onto Lemonade for Orange, Lemonade onto Blue Fizz for Kiwi, Cherry onto Blue Fizz for Grape. Milk and Cola never mix. Drinks mix only when you pour.</p>
+<h2>“Wrong mix!”, what now?</h2>
+<p>When a level can no longer be finished, the bar at the bottom offers Rewind (back three pours), Undo, or a free Restart.</p>
+<h2>I bought something but did not get it</h2>
+<p>Open the Shop and tap “Restore Purchases” at the bottom. Coin packs are delivered once per purchase; No Ads and the Starter Pack restore on every device with the same Apple Account.</p>
+<h2>My progress on a new phone</h2>
+<p>Turn on iCloud for your Apple Account before you open the game on the new phone; your levels, stars and bar come back automatically.</p>
+<h2>Change my ad privacy choices</h2>
+<p>In the EEA, UK and Switzerland, open Settings in the game and tap “Privacy Choices”. Tracking permission can be changed in iOS Settings → Privacy &amp; Security → Tracking.</p>
+<h2>Request a refund</h2>
+<p>Purchases are handled by Apple: visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<p style="margin-top:28px"><a class="btn ghost small" href="privacy.html">Privacy Policy</a> <a class="btn ghost small" href="./">Mix Bar home</a></p>
+"""
+
+MIX_PRIVACY = f"""
+<h1>Privacy Policy</h1>
+<p><small>Mix Bar: Water Sort Puzzle · Last updated: October 18, 2026 · Developer: SefyStudio · Contact: <a href="mailto:{EMAIL}">{EMAIL}</a></small></p>
+<h2>The short version</h2>
+<p>There are no accounts and no sign-up. We do not run a user database. Your progress stays on your device (and in your own iCloud, if it is on). The free version shows ads through Google AdMob.</p>
+<h2>What stays on your device</h2>
+<p>Your progress (levels, stars, coins, boosters, your bar, settings) is stored on your device. We cannot see it. Deleting the app deletes it.</p>
+<h2>iCloud backup</h2>
+<p>If iCloud is on for your Apple Account, the game keeps the same progress in your private iCloud storage (iCloud key-value storage) so a new phone can continue where you left off. This data is stored by Apple under your Apple Account and governed by Apple’s privacy policy. We cannot access it.</p>
+<h2>Anonymous game statistics</h2>
+<p>To balance the levels we may count anonymous game events (for example: a level was started, won or lost, a booster or ad was used, a purchase was made). They carry a random number made on your device, never your name, email, advertising ID or location, and they are not used for advertising or shared with advertisers. They are processed by TelemetryDeck, a privacy-focused analytics service in the EU.</p>
+<h2>Ads (Google AdMob)</h2>
+<p>The game shows rewarded videos (only when you choose to watch one) and occasional full-screen ads between levels, served by Google AdMob. Google and its partners may collect and use your device’s advertising identifier (IDFA), IP address, approximate (coarse) location, ad interaction data and diagnostic data (such as crash and performance data) to deliver, measure and, with your permission, personalize ads and to prevent fraud. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a> and <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.</p>
+<p><b>Consent (EEA, UK, Switzerland).</b> Where required, a consent form from Google’s User Messaging Platform (UMP) asks for your choices before ads load. You can change them at any time in the game: Settings → Privacy Choices.</p>
+<p><b>Tracking permission (App Tracking Transparency).</b> iOS asks whether the app may track you across other companies’ apps and websites. If you decline, the advertising identifier is not shared and you see non-personalized ads. You can change this in iOS Settings → Privacy &amp; Security → Tracking.</p>
+<h2>Purchases</h2>
+<p>Coin packs, the Starter Pack and No Ads are bought through the Apple App Store (StoreKit). We never see your payment details or your Apple Account. The game only learns which product was bought, so it can deliver it.</p>
+<h2>Game Center and reminders</h2>
+<p>If you are signed in to Game Center, the game reports achievements and scores to Apple’s Game Center (Apple’s privacy policy applies). Reminders are local notifications scheduled on your device; nothing is sent to a server.</p>
+<h2>Children</h2>
+<p>Mix Bar is a general-audience game and is not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has given us personal information, contact us and we will help remove it.</p>
+<h2>Your rights</h2>
+<p>Because we do not keep personal data that identifies you, there is usually nothing for us to export or delete. To reset your progress, delete the app (and, if you want, its iCloud data in iOS Settings → [your name] → iCloud → Manage Storage). For ad data held by Google, use your ad choices above or Google’s privacy tools. For any privacy question or request, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<h2>Changes</h2>
+<p>If this policy changes, we will update the date above.</p>
+<p style="margin-top:28px"><a class="btn ghost small" href="support.html">Support</a> <a class="btn ghost small" href="./">Mix Bar home</a></p>
+"""
+
 PIP_SUPPORT = f"""
 <h1>Support</h1>
 <p>Questions, bugs or ideas? Email us at <a href="mailto:{EMAIL}">{EMAIL}</a>. Please tell us your device and OS version.</p>
@@ -470,6 +543,10 @@ if __name__ == "__main__":
          game="pip", current="pip", image="/assets/pip-and-pals-art.webp", icon="/assets/pip-and-pals-icon.png", extra='<meta name="apple-itunes-app" content="app-id=6819880110">\n')
     page("/loom-pop/support.html", "Loom Pop! Support", "Help with Loom Pop!: purchases, progress and ad choices.", doc("", LOOM_SUPPORT), game="loom", current="loom", icon="/assets/loom-pop-icon.png")
     page("/loom-pop/privacy.html", "Loom Pop! Privacy Policy", "Privacy policy of Loom Pop! by SefyStudio.", doc("", LOOM_PRIVACY), game="loom", current="loom", icon="/assets/loom-pop-icon.png")
+    page("/mix-bar/", "Mix Bar: Water Sort Puzzle", "Pour, mix and serve: a water sort puzzle where flavours mix when you pour them. Free for iPhone.", MIX,
+         image="/assets/mix-bar-art.webp", icon="/assets/mix-bar-icon.png")
+    page("/mix-bar/support.html", "Mix Bar Support", "Help with Mix Bar: how to play, purchases, progress and ad choices.", doc("", MIX_SUPPORT), icon="/assets/mix-bar-icon.png")
+    page("/mix-bar/privacy.html", "Mix Bar Privacy Policy", "Privacy policy of Mix Bar: Water Sort Puzzle by SefyStudio.", doc("", MIX_PRIVACY), icon="/assets/mix-bar-icon.png")
     page("/pip-and-pals/support.html", "Pip & Pals Support", "Help with Pip & Pals: purchases, progress and co-op.", doc("", PIP_SUPPORT), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
     page("/pip-and-pals/privacy.html", "Pip & Pals Privacy Policy", "Privacy policy of Pip & Pals: Hide & Seek by SefyStudio.", doc("", PIP_PRIVACY), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
     page("/pip-and-pals/join.html", "Join a Pip & Pals room", "Your friend invited you to a Pip & Pals co-op room.", doc("", PIP_JOIN), game="pip", current="pip",
