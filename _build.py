@@ -547,6 +547,12 @@ if __name__ == "__main__":
          image="/assets/mix-bar-art.webp", icon="/assets/mix-bar-icon.png")
     page("/mix-bar/support.html", "Mix Bar Support", "Help with Mix Bar: how to play, purchases, progress and ad choices.", doc("", MIX_SUPPORT), icon="/assets/mix-bar-icon.png")
     page("/mix-bar/privacy.html", "Mix Bar Privacy Policy", "Privacy policy of Mix Bar: Water Sort Puzzle by SefyStudio.", doc("", MIX_PRIVACY), icon="/assets/mix-bar-icon.png")
+    # the first Mix Bar build links /mix-bar/support/ and /mix-bar/privacy/: forward them
+    for old in ("support", "privacy"):
+        os.makedirs(os.path.join(ROOT, "mix-bar", old), exist_ok=True)
+        with open(os.path.join(ROOT, "mix-bar", old, "index.html"), "w", encoding="utf-8") as f:
+            f.write(f'<!doctype html><meta charset="utf-8"><title>Mix Bar</title><link rel="canonical" href="/mix-bar/{old}.html">'
+                    f'<meta http-equiv="refresh" content="0; url=/mix-bar/{old}.html"><a href="/mix-bar/{old}.html">Mix Bar {old}</a>')
     page("/pip-and-pals/support.html", "Pip & Pals Support", "Help with Pip & Pals: purchases, progress and co-op.", doc("", PIP_SUPPORT), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
     page("/pip-and-pals/privacy.html", "Pip & Pals Privacy Policy", "Privacy policy of Pip & Pals: Hide & Seek by SefyStudio.", doc("", PIP_PRIVACY), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
     page("/pip-and-pals/join.html", "Join a Pip & Pals room", "Your friend invited you to a Pip & Pals co-op room.", doc("", PIP_JOIN), game="pip", current="pip",
