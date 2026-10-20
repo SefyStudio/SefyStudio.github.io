@@ -539,6 +539,38 @@ NOTFOUND = """
 </article></div>
 """
 
+PUBLISHER_PRIVACY = f"""
+<h1>Privacy Policy</h1>
+<p><small>SefyStudio Publisher · Last updated: October 20, 2026 · Developer: SefyStudio · Contact: <a href="mailto:{EMAIL}">{EMAIL}</a></small></p>
+<p>SefyStudio Publisher is an internal tool run by SefyStudio. It posts SefyStudio’s own videos and posts to SefyStudio’s own accounts on YouTube, Instagram and X. It has no public users, no sign-up and no other customers.</p>
+<h2>What the tool accesses</h2>
+<p>Only the SefyStudio accounts that the studio owner has connected. For YouTube, the tool uses the <code>youtube.upload</code> permission to upload videos to SefyStudio’s own channel. For Instagram and X, it uses the permissions needed to read basic account information and publish SefyStudio’s own content.</p>
+<h2>What we store</h2>
+<p>Access tokens for these accounts are kept as encrypted environment secrets in our own production environment. They are never shared, sold or written into code, logs or public files. Videos waiting to be published are kept briefly in our own cloud storage and deleted after publishing.</p>
+<h2>What we do not do</h2>
+<p>We do not collect personal data about anyone else, and we do not sell or share data with third parties. We do not use data from Google APIs for advertising.</p>
+<h2>Google API Services</h2>
+<p>SefyStudio Publisher’s use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<h2>Removing access</h2>
+<p>Access can be withdrawn at any time from the connected account’s security settings (for Google: <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>). Stored tokens are then deleted from our environment.</p>
+<h2>Changes</h2>
+<p>If this policy changes, we will update the date above.</p>
+<p style="margin-top:28px"><a class="btn ghost small" href="/terms.html">Terms of Service</a> <a class="btn ghost small" href="/">SefyStudio home</a></p>
+"""
+
+PUBLISHER_TERMS = f"""
+<h1>Terms of Service</h1>
+<p><small>SefyStudio Publisher · Last updated: October 20, 2026 · Developer: SefyStudio · Contact: <a href="mailto:{EMAIL}">{EMAIL}</a></small></p>
+<p>SefyStudio Publisher is an internal tool that publishes SefyStudio’s own content to SefyStudio’s own accounts on YouTube, Instagram and X. It is not offered to the public, and no one outside SefyStudio can sign in to it.</p>
+<h2>Use</h2>
+<p>The tool is used only by SefyStudio, only for its own accounts, and in line with the terms of each platform, including the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service">YouTube API Services Terms of Service</a>.</p>
+<h2>Content</h2>
+<p>SefyStudio is responsible for everything the tool publishes. The tool publishes only content SefyStudio has made or has the rights to use.</p>
+<h2>No warranty</h2>
+<p>The tool is provided as is, for SefyStudio’s internal use.</p>
+<p style="margin-top:28px"><a class="btn ghost small" href="/privacy.html">Privacy Policy</a> <a class="btn ghost small" href="/">SefyStudio home</a></p>
+"""
+
 if __name__ == "__main__":
     page("/", "SefyStudio", "SefyStudio is an independent studio making cozy games and apps: Loom Pop!, Pip & Pals: Hide & Seek and Mix Bar.", HOME)
     page("/loom-pop/", "Loom Pop! Yarn Sort Puzzle", "A cozy yarn-sorting puzzle for iPhone. Tap yarn balls, fill the loom and weave 200+ colourful patterns.", LOOM,
@@ -561,5 +593,8 @@ if __name__ == "__main__":
     page("/pip-and-pals/privacy.html", "Pip & Pals Privacy Policy", "Privacy policy of Pip & Pals: Hide & Seek by SefyStudio.", doc("", PIP_PRIVACY), game="pip", current="pip", icon="/assets/pip-and-pals-icon.png")
     page("/pip-and-pals/join.html", "Join a Pip & Pals room", "Your friend invited you to a Pip & Pals co-op room.", doc("", PIP_JOIN), game="pip", current="pip",
          image="/assets/pip-and-pals-art.webp", icon="/assets/pip-and-pals-icon.png")
+    # SefyStudio Publisher (our own posting tool): the Google / Meta consent screens link these
+    page("/privacy.html", "Privacy Policy · SefyStudio Publisher", "Privacy policy of SefyStudio Publisher, SefyStudio's internal publishing tool.", doc("", PUBLISHER_PRIVACY))
+    page("/terms.html", "Terms of Service · SefyStudio Publisher", "Terms of service of SefyStudio Publisher, SefyStudio's internal publishing tool.", doc("", PUBLISHER_TERMS))
     page("/brand/", "Brand assets · SefyStudio", "SefyStudio logos and icons for press and partners.", doc("", BRAND))
     page("/404.html", "Page not found · SefyStudio", "This page could not be found.", NOTFOUND)
