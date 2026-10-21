@@ -551,6 +551,7 @@ PUBLISHER_PRIVACY = f"""
 <p>We do not collect personal data about anyone else, and we do not sell or share data with third parties. We do not use data from Google APIs for advertising.</p>
 <h2>Google API Services</h2>
 <p>SefyStudio Publisher’s use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<p>SefyStudio Publisher uses YouTube API Services. By using it you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>; see the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> for how Google handles data.</p>
 <h2>Removing access</h2>
 <p>Access can be withdrawn at any time from the connected account’s security settings (for Google: <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>). Stored tokens are then deleted from our environment.</p>
 <h2>Changes</h2>
