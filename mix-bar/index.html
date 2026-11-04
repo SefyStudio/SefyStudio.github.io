@@ -5,68 +5,73 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Mix Bar: Water Sort Puzzle</title>
 <meta name="description" content="Pour, mix and serve: a water sort puzzle where flavours mix when you pour them. Free for iPhone.">
-<meta name="theme-color" content="#f7f5ff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f0c19" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fff6ea">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mix Bar: Water Sort Puzzle">
 <meta property="og:description" content="Pour, mix and serve: a water sort puzzle where flavours mix when you pour them. Free for iPhone.">
-<meta property="og:image" content="https://sefystudio.com/assets/mix-bar-art.webp">
+<meta property="og:image" content="https://sefystudio.com/mix-bar/img/poster.jpg">
 <meta property="og:url" content="https://sefystudio.com/mix-bar/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/mix-bar-icon.png">
-<link rel="apple-touch-icon" href="/assets/mix-bar-icon.png">
+<link rel="icon" href="/mix-bar/img/icon-180.png">
+<link rel="apple-touch-icon" href="/mix-bar/img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=767dcbec">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=4cb136fd">
 </head>
-<body>
-<header class="nav"><div class="wrap"><div class="bar">
-  <a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="SefyStudio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="SefyStudio" width="300" height="96"></a>
-  <nav aria-label="Main"><a href="/#games">Games</a><a href="/loom-pop/" class="opt">Loom Pop!</a><a href="/pip-and-pals/" class="opt">Pip &amp; Pals</a><a href="/mix-bar/" class="opt" aria-current="page">Mix Bar</a><a href="/#about" class="opt">About</a><a href="/#contact">Contact</a></nav>
-</div></div></header>
+<body data-game="mix">
+<header class="nav"><div class="wrap bar">
+  <a class="logo" href="/"><img src="/assets/brand/sefystudio-logo-horizontal.svg" alt="SefyStudio" width="300" height="96"></a>
+  <button class="menu" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+  <nav aria-label="Main"><a href="/#games">Games</a><a href="/loom-pop/">Loom Pop!</a><a href="/mix-bar/" aria-current="page">Mix Bar</a><a href="/#about">About</a><a href="/#contact">Contact</a></nav>
+</div></header>
 <main>
-<section class="ghero"><div class="wrap">
-  <div class="panel card">
-    <div class="art"><img src="/assets/mix-bar-art.webp" alt="The Mix Bar logo between glasses of soda" width="1600" height="600"></div>
-    <div class="info">
-      <img class="icon" src="/assets/mix-bar-icon.png" alt="Mix Bar app icon" width="224" height="224">
-      <div>
-        <h1>Mix Bar <span>Water Sort Puzzle</span></h1>
-        <p class="tagline">Pour, mix and serve! A water sort puzzle with a twist: flavours mix when you pour them. Cherry on Lemonade makes Orange, and every full glass goes to the customer who ordered it.</p>
-        <div class="meta"><span class="chip">Free</span><span class="chip">iPhone</span><span class="chip">10 languages</span><span class="chip">Plays offline</span></div>
-      </div>
-      <div class="actions"><span class="btn ghost small" aria-disabled="true">Coming soon to the App Store</span></div>
+<section class="ghero">
+  <div class="band mix"><i class="sp s1"><svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 Q11.6 8.4 19 10 Q11.6 11.6 10 19 Q8.4 11.6 1 10 Q8.4 8.4 10 1Z"/></svg></i><i class="sp s2"><svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 Q11.6 8.4 19 10 Q11.6 11.6 10 19 Q8.4 11.6 1 10 Q8.4 8.4 10 1Z"/></svg></i><i class="sp s3"><svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 Q11.6 8.4 19 10 Q11.6 11.6 10 19 Q8.4 11.6 1 10 Q8.4 8.4 10 1Z"/></svg></i><i class="sp s4"><svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 Q11.6 8.4 19 10 Q11.6 11.6 10 19 Q8.4 11.6 1 10 Q8.4 8.4 10 1Z"/></svg></i><div class="wrap ghero-grid">
+    <div class="ghero-copy">
+      <img class="icon" src="/mix-bar/img/icon.png" alt="Mix Bar app icon" width="128" height="128">
+      <h1>Mix Bar</h1><p class="sub">Water Sort Puzzle</p>
+      <p class="lead">Tap a glass, then another to pour. Flavours mix when you pour them: cherry on lemonade makes orange. Fill a glass with one flavour and serve the customer who ordered it.</p>
+      <div class="actions"><span class="btn store soon" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-4.2zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg><span><small>Coming soon to the</small>App Store</span></span></div>
     </div>
-  </div>
+    <div class="video"><video src="/mix-bar/img/preview.mp4" poster="/mix-bar/img/poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Mix Bar gameplay"></video></div>
+  </div><svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 24 C240 62 480 56 720 30 S1200 64 1440 22 V60 H0 Z"/><path class="edge" d="M0 24 C240 62 480 56 720 30 S1200 64 1440 22"/></svg></div>
+</section>
+
+<section><div class="wrap">
+  <div class="section-head reveal"><h2>How it plays</h2></div>
+  <div class="features"><article class="feature card reveal"><img src="/mix-bar/img/shot-1.webp" alt="Sort and mix" width="660" height="1434" loading="lazy"><h3>Sort and mix</h3><p>Pour layer onto layer. Some flavours mix into new drinks, milk and cola never do.</p></article><article class="feature card reveal"><img src="/mix-bar/img/shot-4.webp" alt="Plan every pour" width="660" height="1434" loading="lazy"><h3>Plan every pour</h3><p>Every level has a move limit. No timers, just clever moves, and every level is solvable.</p></article><article class="feature card reveal"><img src="/mix-bar/img/shot-5.webp" alt="Build your bar" width="660" height="1434" loading="lazy"><h3>Build your bar</h3><p>Stars renovate the diner, then open a beach bar, an ice cream parlor and a rooftop lounge.</p></article></div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="help">
-    <a class="card reveal" href="support.html"><b>Support</b><span>How to play, purchases, progress and ad choices.</span></a>
-    <a class="card reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Ads by Google AdMob.</span></a>
-  </div>
+  <div class="section-head reveal"><h2>Screenshots</h2></div>
+  <div class="rail reveal" tabindex="0" aria-label="Screenshots"><img src="/mix-bar/img/shot-1.webp" alt="Sort and mix drinks" width="660" height="1434" loading="lazy"><img src="/mix-bar/img/shot-2.webp" alt="Serve every order" width="660" height="1434" loading="lazy"><img src="/mix-bar/img/shot-3.webp" alt="Chain big combos" width="660" height="1434" loading="lazy"><img src="/mix-bar/img/shot-4.webp" alt="Plan every pour" width="660" height="1434" loading="lazy"><img src="/mix-bar/img/shot-5.webp" alt="Build your diner" width="660" height="1434" loading="lazy"><img src="/mix-bar/img/shot-6.webp" alt="Open new places" width="660" height="1434" loading="lazy"><img src="/mix-bar/img/shot-7.webp" alt="Top of the town" width="660" height="1434" loading="lazy"><img src="/mix-bar/img/shot-8.webp" alt="Hundreds of levels" width="660" height="1434" loading="lazy"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="facts card reveal"><div class="fact"><small>Levels</small><strong>Hundreds, all solvable</strong></div><div class="fact"><small>Device</small><strong>iPhone</strong></div><div class="fact"><small>Price</small><strong>Free, optional No Ads</strong></div><div class="fact"><small>Languages</small><strong>10</strong></div></div>
+  <div class="help"><a class="card reveal" href="support.html"><b>Support</b><span>How to play, purchases, progress and ad choices.</span></a><a class="card reveal" href="privacy.html"><b>Privacy</b><span>No accounts, no user database. Ads by Google AdMob.</span></a><a class="card reveal" href="/#contact"><b>Contact</b><span>Questions or ideas? Write to us.</span></a></div>
 </div></section>
 <section id="contact"><div class="wrap">
   <div class="contact card reveal">
-    <div><h2>Say hello</h2><p>Questions about Mix Bar? Ideas, bugs, press or partnerships: we read every email.</p></div>
-    <div class="copy-row"><code>support@sefystudio.com</code><button class="btn primary" type="button" data-copy="support@sefystudio.com">Copy email</button></div>
+    <div><h2>Say hello</h2><p>Questions about Mix Bar? Ideas, bugs, press or partnerships: we read every email and answer within a day or two.</p></div>
+    <div class="copy-row"><a class="mail" href="mailto:support@sefystudio.com">support@sefystudio.com</a><button class="btn primary" type="button" data-copy="support@sefystudio.com">Copy email</button></div>
   </div>
 </div></section>
 </main>
 <footer><div class="wrap">
   <div class="cols">
-    <div class="brand"><a class="logo" href="/"><img class="on-light" src="/assets/brand/sefystudio-logo-horizontal.svg" alt="SefyStudio" width="300" height="96"><img class="on-dark" src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="SefyStudio" width="300" height="96"></a>
-      <p>An independent studio making cozy games and apps for iPhone, iPad and the web.</p></div>
+    <div class="brand"><a class="logo" href="/"><img src="/assets/brand/sefystudio-logo-horizontal.svg" alt="SefyStudio" width="300" height="96"></a>
+      <p>A small independent studio making cozy games for iPhone.</p></div>
     <div><h4>Loom Pop!</h4><ul><li><a href="/loom-pop/">Overview</a></li><li><a href="https://apps.apple.com/app/id6822636298">App Store</a></li>
       <li><a href="/loom-pop/support.html">Support</a></li><li><a href="/loom-pop/privacy.html">Privacy</a></li></ul></div>
-    <div><h4>Pip &amp; Pals</h4><ul><li><a href="/pip-and-pals/">Overview</a></li><li><a href="/pip-and-pals/play/">Play in browser</a></li>
-      <li><a href="https://apps.apple.com/app/id6819880110">App Store</a></li><li><a href="/pip-and-pals/support.html">Support</a></li><li><a href="/pip-and-pals/privacy.html">Privacy</a></li></ul></div>
-    <div><h4>Mix Bar</h4><ul><li><a href="/mix-bar/">Overview</a></li><li><a href="/mix-bar/support.html">Support</a></li><li><a href="/mix-bar/privacy.html">Privacy</a></li></ul></div>
-    <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="https://www.youtube.com/@sefystudio">YouTube</a></li><li><a href="/brand/">Brand assets</a></li><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/terms.html">Terms of Service</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
+    <div><h4>Mix Bar</h4><ul><li><a href="/mix-bar/">Overview</a></li>
+      <li><a href="/mix-bar/support.html">Support</a></li><li><a href="/mix-bar/privacy.html">Privacy</a></li></ul></div>
+    <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="https://www.youtube.com/@sefystudio">YouTube</a></li>
+      <li><a href="/brand/">Brand assets</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
   </div>
-  <p class="legal">© <span id="year">2026</span> SefyStudio. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+  <p class="legal">© <span id="year">2026</span> SefyStudio · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a><br>Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
 </div></footer>
-<script src="/assets/site.js?v=dda9d745" defer></script>
+<script src="/assets/site.js?v=d82116df" defer></script>
 </body>
 </html>
