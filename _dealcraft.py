@@ -19,11 +19,11 @@ PRIVACY_EN = f"""
 <h2>3. Leaderboard (optional)</h2>
 <p>If you join the leaderboard we process:</p>
 <ul>
-  <li>the <b>display name</b> you choose and, if you enter one, a <b>company code</b> to appear on your company's board;</li>
+  <li>the <b>display name</b> you choose;</li>
   <li>a random <b>player id</b> and a secret key created on your device (we store only a hash of the key);</li>
   <li>the <b>score and stars</b> of chapters you finish online, with the time they were recorded.</li>
 </ul>
-<p><b>Why:</b> to show the leaderboards you asked to join. <b>Legal basis:</b> performance of the service you requested (GDPR Art. 6(1)(b); KVKK Art. 5(2)(c)). <b>Where:</b> Cloudflare's database (Cloudflare D1). <b>How long:</b> until you delete it.</p>
+<p><b>Why:</b> to show the leaderboard you asked to join. <b>Legal basis:</b> performance of the service you requested (GDPR Art. 6(1)(b); KVKK Art. 5(2)(c)). <b>Where:</b> Cloudflare's database (Cloudflare D1). <b>How long:</b> until you delete it.</p>
 <p><b>Delete:</b> in the app, open <i>Leaderboard → Leave the board and delete my data</i>. Your name, scores and reports are deleted from our server immediately. You can also email us.</p>
 <p><b>Display names and reports.</b> Names are checked against a list of offensive words. Any player can report a name; a report stores the reported player id, the reporter's player id (or, for viewers who have not joined, a one-way hash of their IP address) and the time. A name reported by two different players is hidden. Reports are deleted with the reported or reporting player's data.</p>
 
@@ -71,11 +71,11 @@ PRIVACY_TR = f"""
 <h2>3. Sıralama tablosu (isteğe bağlı)</h2>
 <p>Sıralama tablosuna katılırsan şunları işleriz:</p>
 <ul>
-  <li>seçtiğin <b>görünen ad</b> ve, girersen, şirket tablosunda görünmek için <b>şirket kodu</b>;</li>
+  <li>seçtiğin <b>görünen ad</b>;</li>
   <li>cihazında üretilen rastgele bir <b>oyuncu kimliği</b> ve gizli anahtar (anahtarın yalnızca özetini saklarız);</li>
   <li>çevrimiçi bitirdiğin bölümlerin <b>puan ve yıldızları</b> ve kayıt zamanı.</li>
 </ul>
-<p><b>Amaç:</b> katılmak istediğin tabloları göstermek. <b>Hukuki sebep:</b> talep ettiğin hizmetin sunulması (KVKK m.5/2-c; GDPR m.6/1-b). <b>Nerede:</b> Cloudflare veritabanı (Cloudflare D1). <b>Ne kadar süre:</b> sen silene kadar.</p>
+<p><b>Amaç:</b> katılmak istediğin tabloyu göstermek. <b>Hukuki sebep:</b> talep ettiğin hizmetin sunulması (KVKK m.5/2-c; GDPR m.6/1-b). <b>Nerede:</b> Cloudflare veritabanı (Cloudflare D1). <b>Ne kadar süre:</b> sen silene kadar.</p>
 <p><b>Silme:</b> Uygulamada <i>Sıralama tablosu → Tablodan çık ve verilerimi sil</i> düğmesine dokun. Adın, puanların ve bildirimlerin sunucudan hemen silinir. Bize e-posta da yazabilirsin.</p>
 <p><b>Görünen adlar ve bildirimler.</b> Adlar uygunsuz kelime listesiyle kontrol edilir. Her oyuncu bir adı bildirebilir; bildirim, bildirilen oyuncu kimliğini, bildirenin oyuncu kimliğini (tabloya katılmamış izleyiciler için IP adresinin tek yönlü özetini) ve zamanı saklar. İki farklı oyuncu tarafından bildirilen ad gizlenir. Bildirimler, bildirilen ya da bildiren oyuncunun verileriyle birlikte silinir.</p>
 
@@ -122,9 +122,7 @@ SUPPORT_EN = f"""
 <h2>Ads and privacy choices</h2>
 <p>In the EEA, UK and Switzerland, tap <i>Ad choices</i> at the bottom of the home screen. Tracking permission can be changed in iOS Settings → Privacy &amp; Security → Tracking. The full version has no ads.</p>
 <h2>Leaderboard</h2>
-<p>Joining is optional and only needs a display name (and a company code if your company gave you one). To report a name, tap <i>Report</i> next to it: it is hidden on your device at once and reviewed. To leave and delete your data, tap <i>Leave the board and delete my data</i>.</p>
-<h2>Company boards</h2>
-<p>Want a private board for your sales team? Email us with your company name and we'll send an invite code.</p>
+<p>Joining is optional and only needs a display name. To report a name, tap <i>Report</i> next to it: it is hidden on your device at once and reviewed. To leave and delete your data, tap <i>Leave the board and delete my data</i>.</p>
 <h2>My progress is gone</h2>
 <p>Progress is saved on your device. Deleting the app or clearing its data removes it. Your full-version purchase is never lost: restore it with the same Apple ID.</p>
 <p style="margin-top:26px"><a class="btn ghost small" href="privacy.html">Privacy Policy</a> <a class="btn ghost small" href="terms.html">Terms of use</a> <a class="btn ghost small" href="./">DealCraft</a></p>
@@ -145,9 +143,7 @@ SUPPORT_TR = f"""
 <h2>Reklam ve gizlilik tercihleri</h2>
 <p>AEA, Birleşik Krallık ve İsviçre'de ana sayfanın altındaki <i>Reklam tercihleri</i>'ne dokun. Takip izni iOS Ayarlar → Gizlilik ve Güvenlik → Takip bölümünden değiştirilebilir. Tam sürümde reklam yoktur.</p>
 <h2>Sıralama tablosu</h2>
-<p>Katılmak isteğe bağlıdır; yalnızca bir görünen ad (şirketin verdiyse bir şirket kodu) ister. Bir adı bildirmek için yanındaki <i>Bildir</i>'e dokun: ad cihazında hemen gizlenir ve incelenir. Tablodan çıkıp verilerini silmek için <i>Tablodan çık ve verilerimi sil</i>'e dokun.</p>
-<h2>Şirket tabloları</h2>
-<p>Satış ekibin için özel bir tablo mu istiyorsun? Şirket adınla bize yaz, davet kodunu gönderelim.</p>
+<p>Katılmak isteğe bağlıdır; yalnızca bir görünen ad ister. Bir adı bildirmek için yanındaki <i>Bildir</i>'e dokun: ad cihazında hemen gizlenir ve incelenir. Tablodan çıkıp verilerini silmek için <i>Tablodan çık ve verilerimi sil</i>'e dokun.</p>
 <h2>İlerlemem kayboldu</h2>
 <p>İlerleme cihazında saklanır. Uygulamayı silmek ya da verilerini temizlemek onu siler. Tam sürüm satın alman kaybolmaz: aynı Apple kimliğiyle geri yükleyebilirsin.</p>
 <p style="margin-top:26px"><a class="btn ghost small" href="gizlilik.html">Gizlilik Politikası</a> <a class="btn ghost small" href="kosullar.html">Kullanım koşulları</a> <a class="btn ghost small" href="./">DealCraft</a></p>
@@ -164,7 +160,7 @@ TERMS_EN = f"""
 <h2>Training, not advice</h2>
 <p>DealCraft is a game for learning and practising sales techniques. The customers, products, prices and situations are fictional. Legal, tax, insurance and technical details are simplified for training and are not legal, financial or professional advice. In real deals, follow current law and qualified professionals.</p>
 <h2>Leaderboard conduct</h2>
-<p>Choose a display name that is not offensive, does not impersonate anyone and contains no personal data of others. We may hide or remove names and results that break these rules or that were obtained by cheating, and we may remove company boards that are misused.</p>
+<p>Choose a display name that is not offensive, does not impersonate anyone and contains no personal data of others. We may hide or remove names and results that break these rules or that were obtained by cheating.</p>
 <h2>Availability</h2>
 <p>We work to keep online play and the leaderboard running but cannot promise they will always be available. The game can always be played offline.</p>
 <h2>Contact</h2>
@@ -183,7 +179,7 @@ TERMS_TR = f"""
 <h2>Eğitimdir, tavsiye değildir</h2>
 <p>DealCraft, satış tekniklerini öğrenmek ve denemek için bir oyundur. Müşteriler, ürünler, fiyatlar ve durumlar kurgudur. Yasal, vergi, sigorta ve teknik ayrıntılar eğitim için sadeleştirilmiştir; hukuki, mali ya da mesleki tavsiye değildir. Gerçek işlemlerde güncel mevzuatı ve yetkili uzmanları esas al.</p>
 <h2>Sıralama tablosu kuralları</h2>
-<p>Uygunsuz olmayan, kimseyi taklit etmeyen ve başkalarının kişisel verisini içermeyen bir görünen ad seç. Bu kurallara uymayan ya da hileyle elde edilen ad ve sonuçları gizleyebilir veya kaldırabiliriz; kötüye kullanılan şirket tablolarını kapatabiliriz.</p>
+<p>Uygunsuz olmayan, kimseyi taklit etmeyen ve başkalarının kişisel verisini içermeyen bir görünen ad seç. Bu kurallara uymayan ya da hileyle elde edilen ad ve sonuçları gizleyebilir veya kaldırabiliriz.</p>
 <h2>Erişilebilirlik</h2>
 <p>Çevrimiçi oyunun ve sıralama tablosunun çalışır kalması için çalışırız, ancak her zaman erişilebilir olacaklarını garanti edemeyiz. Oyun her zaman internetsiz oynanabilir.</p>
 <h2>İletişim</h2>
