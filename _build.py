@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Builds every page of the SefyStudio site from one template, styled by assets/site.css (cozy studio look, 2026-11-04:
+"""Builds every page of the SefyStudio site from one template, styled by assets/site.css ("Studio" theme 2026-11-16: ink, white,
+violet and yellow; Syne / Instrument Serif / Geist. Earlier looks: cozy 2026-11-04,
 cream paper, warm ink outlines, Fredoka type and colour wave bands, the same language as Loom Pop! and Mix Bar).
 
     python3 _build.py
@@ -7,7 +8,7 @@ cream paper, warm ink outlines, Fredoka type and colour wave bands, the same lan
 Edit the page bodies below, never the generated .html files. Files starting with "_" are not published by GitHub Pages.
 Pip & Pals left the site on 2026-11-04; only its privacy, support and join pages stay (unlisted) because the app links them.
 
-DealCraft (2026-11-16): the site keeps the cozy studio look; only DealCraft's wide promo card (home page top, the
+DealCraft (2026-11-16): the site uses the Studio theme; only DealCraft's wide promo card (home page top, the
 DealCraft game card and the top of /dealcraft/) uses DealCraft's own "Masa" look (styles scoped to .dc-*).
 DealCraft pages: /dealcraft/ (EN), /dealcraft/tr/ (TR), each with privacy, support and terms; texts in _dealcraft.py.
 App Store links: Privacy /dealcraft/privacy.html (TR /dealcraft/tr/gizlilik.html), Support /dealcraft/support.html
@@ -83,7 +84,7 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/brand/
 {icons}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@500;600;700;800&amp;family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700..800&amp;family=Schibsted+Grotesk:wght@500;700&amp;family=Martian+Mono:wght@600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@500&amp;family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700..800&amp;family=Schibsted+Grotesk:wght@500;700&amp;family=Martian+Mono:wght@600&amp;display=swap">
 <link rel="stylesheet" href="/assets/site.css?v={ver('assets/site.css')}">
 {extra}</head>
 <body{f' data-game="{game}"' if game else ""}>
@@ -97,7 +98,7 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/brand/
 </main>
 <footer><div class="wrap">
   <div class="cols">
-    <div class="brand"><a class="logo" href="/"><img src="/assets/brand/sefystudio-logo-horizontal.svg" alt="SefyStudio" width="300" height="96"></a>
+    <div class="brand"><a class="logo" href="/"><img src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="SefyStudio" width="300" height="96"></a>
       <p>A small independent studio making well-crafted games for iPhone.</p></div>
     <div><h4>DealCraft</h4><ul><li><a href="/dealcraft/">Overview</a> · <a href="/dealcraft/tr/">TR</a></li>
       <li><a href="/dealcraft/support.html">Support</a></li><li><a href="/dealcraft/privacy.html">Privacy</a></li><li><a href="/dealcraft/terms.html">Terms</a></li></ul></div>
@@ -136,7 +137,7 @@ def rail(folder, alts):
         f'<img src="/{folder}/img/shot-{i + 1}.webp" alt="{a}" width="660" height="1434" loading="lazy">' for i, a in enumerate(alts)) + "</div>"
 
 
-LOOM_ALTS = ["Aim, pop and weave", "Fever combos", "Weave cozy patterns", "Happy customers", "200 patterns to collect", "Your cozy yarn shop"]
+LOOM_ALTS = ["Aim, pop and weave", "Fever combos", "Weave patterns", "Happy customers", "200 patterns to collect", "Your yarn shop"]
 MIX_ALTS = ["Sort and mix drinks", "Serve every order", "Chain big combos", "Plan every pour", "Build your diner", "Open new places", "Top of the town", "Hundreds of levels"]
 
 def dc_stub(text):
@@ -161,7 +162,7 @@ def dc_promo(lang="en", heading="h2", link=True):
     p = "tr-" if tr else "en-"
     return f"""<article class="dc-promo reveal" lang="{lang}">
   <div class="dc-art">
-    <img class="dc-wide" src="/dealcraft/img/{p}header.webp" alt="" width="1920" height="823">
+    <img class="dc-wide" src="/dealcraft/img/{p}panel.webp" alt="" width="1000" height="871">
     <img class="dc-tall" src="/dealcraft/img/{p}shot-1.webp" alt="" width="660" height="1434" loading="lazy">
   </div>
   <div class="dc-ticket">{dc_stub("No.01 · DC-4539")}
@@ -181,7 +182,7 @@ GAMES = [
          text="Sit across from a customer, play one reply card per turn and close the deal. Every card hides a real sales technique; some are traps.",
          chips=["Card game", "180 customers", "TR + EN"], cta=store(DEAL_STORE, DEAL_LIVE, small=True)),
     dict(cls="loom", name="Loom Pop!", sub="Yarn Ball Shooter", page="/loom-pop/", icon="/loom-pop/img/icon.png", shot="/loom-pop/img/shot-1.webp",
-         text="Aim, pop and weave. Match three yarn balls and every pop knits a cozy picture on the loom, stitch by stitch.",
+         text="Aim, pop and weave. Match three yarn balls and every pop knits a picture on the loom, stitch by stitch.",
          chips=["Puzzle", "200 patterns", "Free"], cta=store(LOOM_STORE, small=True)),
     dict(cls="mix", name="Mix Bar", sub="Water Sort Puzzle", page="/mix-bar/", icon="/mix-bar/img/icon.png", shot="/mix-bar/img/shot-1.webp",
          text="Pour, mix and serve. Cherry on lemonade makes orange, and every full glass goes to the customer who ordered it.",
@@ -209,14 +210,14 @@ HOME = f"""
 <section class="hero">
   {band("home", f'''<div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="kicker">SefyStudio</p>
-      <h1>Little games,<br>made with care.</h1>
-      <p class="lead">We are a small independent studio. Our games are fair, full of tiny details and worth getting good at. No accounts, no pressure.</p>
-      <div class="actions"><a class="btn primary" href="#games">Meet our games</a><a class="btn ghost light" href="#about">About us</a></div>
+      <p class="kicker">SefyStudio · Independent games</p>
+      <h1>Games worth <em>getting good</em> at.</h1>
+      <p class="lead">A small independent studio making iPhone games with real writing, hand-made art and fair rules. Easy to start, worth mastering, and never in your way.</p>
+      <div class="actions"><a class="btn primary" href="#games">See our games</a><a class="btn ghost light" href="#about">The studio</a></div>
     </div>
     <div class="hero-shots" aria-hidden="true">
-      <img class="ph a" src="/loom-pop/img/shot-1.webp" alt="" width="660" height="1434">
-      <img class="ph b" src="/mix-bar/img/shot-1.webp" alt="" width="660" height="1434">
+      <img class="ph a" src="/dealcraft/img/en-raw-turn.webp" alt="" width="660" height="1434">
+      <img class="ph b" src="/loom-pop/img/shot-1.webp" alt="" width="660" height="1434">
     </div>
   </div>''')}
 </section>
@@ -230,13 +231,13 @@ HOME = f"""
   <div class="about card reveal">
     <img class="mascot" src="/assets/brand/sefy-mascot.svg" alt="Sefy, the SefyStudio mascot" width="220" height="220" loading="lazy">
     <div>
-      <h2>Small studio, big care</h2>
-      <p class="lead">We make the kind of games we like to play on the sofa: soft colours, gentle sounds and puzzles that respect your time.</p>
+      <h2>Small studio, <em>finished</em> games.</h2>
+      <p class="lead">Every game is written, drawn, tested and supported by the people who made it. If you write to us, someone who works on the game answers.</p>
     </div>
   </div>
   <div class="tiles">
-    <div class="tile card reveal"><b>10</b><h3>languages</h3><p>English, Türkçe, Español, Português, Deutsch, Français, Italiano, 日本語 and 한국어.</p></div>
-    <div class="tile card reveal"><b>0</b><h3>accounts</h3><p>No sign-up and no user database. Your progress stays on your device and in your own iCloud.</p></div>
+    <div class="tile card reveal"><b>180</b><h3>hand-written customers</h3><p>Every DealCraft chapter is a real conversation, written by hand, with its own lesson.</p></div>
+    <div class="tile card reveal"><b>0</b><h3>accounts needed</h3><p>No sign-up walls. Your progress stays on your device.</p></div>
     <div class="tile card reveal"><b>100%</b><h3>solvable</h3><p>Every Mix Bar level is checked by a solver before it ships. Fair puzzles only.</p></div>
     <div class="tile card reveal"><b>200</b><h3>patterns</h3><p>Every motif in Loom Pop! is drawn stitch by stitch, from Kilim Classics to Sea Life.</p></div>
   </div>
@@ -281,11 +282,11 @@ def game_page(cls, name, sub, tagline, live, url, video, folder, alts, features,
 
 
 LOOM = game_page("loom", "Loom Pop!", "Yarn Ball Shooter",
-    "Shoot yarn balls into the rolling chain, match three of a colour and watch every pop race round the loom and knit a cozy picture, stitch by stitch.",
+    "Shoot yarn balls into the rolling chain, match three of a colour and watch every pop race round the loom and knit a picture, stitch by stitch.",
     True, LOOM_STORE, True, "loom-pop", LOOM_ALTS,
     [(1, "Aim, pop, weave", "Match three yarn balls of a colour. Each pop sends its yarn to the loom and the picture grows."),
      (2, "Fever combos", "Chain reactions pull the yarn back and pay out coins. Six in a row and Fever starts."),
-     (5, "200 patterns", "Eight cozy collections, from Kilim Classics to Sea Life, all in your pattern book.")],
+     (5, "200 patterns", "Eight collections, from Kilim Classics to Sea Life, all in your pattern book.")],
     [("Patterns", "200 in 8 collections"), ("Device", "iPhone"), ("Price", "Free, optional No Ads"), ("Languages", "10")],
     [("support.html", "Support", "Restore No Ads, coins, progress and ad choices."), ("privacy.html", "Privacy", "No accounts, no user database. Ads by Google AdMob."),
      (LOOM_STORE, "App Store", "Free download for iPhone.")])
@@ -576,7 +577,7 @@ if __name__ == "__main__":
                 ("terms.html", "kosullar.html", "DealCraft Terms of Use", "DealCraft Kullanım Koşulları", D.TERMS_EN, D.TERMS_TR)):
             page(base + (tr_name if tr else en_name), title_tr if tr else title_en, (title_tr if tr else title_en) + " · SefyStudio",
                  doc("", body_tr if tr else body_en), alt=("en" if tr else "tr", oth + (en_name if tr else tr_name)), **kw)
-    page("/loom-pop/", "Loom Pop! Yarn Ball Shooter", "Aim, pop and weave: match three yarn balls and knit 200 cozy patterns. Free for iPhone.", LOOM,
+    page("/loom-pop/", "Loom Pop! Yarn Ball Shooter", "Aim, pop and weave: match three yarn balls and knit 200 patterns. Free for iPhone.", LOOM,
          game="loom", current="loom", image="/loom-pop/img/poster.jpg", icon="/loom-pop/img/icon-180.png", extra='<meta name="apple-itunes-app" content="app-id=6822636298">\n')
     page("/loom-pop/support.html", "Loom Pop! Support", "Help with Loom Pop!: purchases, progress and ad choices.", doc("", LOOM_SUPPORT), game="loom", current="loom", icon="/loom-pop/img/icon-180.png")
     page("/loom-pop/privacy.html", "Loom Pop! Privacy Policy", "Privacy policy of Loom Pop! by SefyStudio.", doc("", LOOM_PRIVACY), game="loom", current="loom", icon="/loom-pop/img/icon-180.png")
