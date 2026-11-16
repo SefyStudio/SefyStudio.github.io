@@ -32,8 +32,8 @@ PRIVACY_EN = f"""
 <p><b>Consent (EEA, UK, Switzerland).</b> Before ads load, Google's consent form (User Messaging Platform) asks for your choices. You can change them at any time from the home screen of the game: <i>Ad choices</i>.</p>
 <p><b>Tracking permission.</b> iOS asks whether DealCraft may track you across other companies' apps and websites (App Tracking Transparency). If you decline, the advertising identifier is not shared and ads are not personalised. The game works the same either way. You can change this in iOS Settings → Privacy &amp; Security → Tracking. With the full version, no ads are shown.</p>
 
-<h2>5. Purchases (Apple and RevenueCat)</h2>
-<p>The full version is a one-time in-app purchase handled by Apple. We never see your payment details or your Apple ID. To confirm the purchase and restore it on your other devices, we use RevenueCat, Inc., which processes an anonymous app user id, the purchase receipt and basic device information. See <a href="https://www.revenuecat.com/privacy/">RevenueCat's privacy policy</a>.</p>
+<h2>5. Purchases (Apple)</h2>
+<p>The full version is a one-time in-app purchase handled entirely by Apple through the App Store (StoreKit). We never see your payment details or your Apple ID, and we run no purchase server: the game only learns on your device that the full version was bought, so it can unlock it and restore it on your other devices.</p>
 
 <h2>6. Game Center</h2>
 <p>If you are signed in to Game Center, your achievements and seller score are sent to Apple Game Center and shown according to your Game Center settings, under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. We don't receive your Game Center identity.</p>
@@ -42,7 +42,7 @@ PRIVACY_EN = f"""
 <p>If you tap <i>Answer by voice</i>, iOS asks for microphone and speech recognition permission. Your speech is turned into text by Apple's speech recognition (on your iPhone when the device supports it, otherwise by Apple's servers under Apple's privacy policy) and the text is used only to pick the matching card on your device. We do not record, store or receive your voice or the text. You can always play by tapping the cards instead.</p>
 
 <h2>8. International transfers</h2>
-<p>Cloudflare, Google and RevenueCat may process data outside your country, including in the United States. These providers use safeguards such as the EU Standard Contractual Clauses. For players in Türkiye, data is transferred abroad on the basis of these safeguards and, where required, your explicit consent given through the in-app permission and consent screens (KVKK Art. 9).</p>
+<p>Cloudflare and Google may process data outside your country, including in the United States. These providers use safeguards such as the EU Standard Contractual Clauses. For players in Türkiye, data is transferred abroad on the basis of these safeguards and, where required, your explicit consent given through the in-app permission and consent screens (KVKK Art. 9).</p>
 
 <h2>9. Children</h2>
 <p>DealCraft is a general-audience game and is not directed to children under 13. We do not knowingly collect personal data from children. If you believe a child has joined the leaderboard, contact us and we will delete it.</p>
@@ -84,8 +84,8 @@ PRIVACY_TR = f"""
 <p><b>Rıza (AEA, Birleşik Krallık, İsviçre).</b> Reklamlar yüklenmeden önce Google'ın rıza formu (User Messaging Platform) tercihlerini sorar. Tercihini istediğin an oyunun ana sayfasındaki <i>Reklam tercihleri</i> bağlantısından değiştirebilirsin.</p>
 <p><b>Takip izni.</b> iOS, DealCraft'ın seni diğer şirketlerin uygulama ve web sitelerinde takip edip edemeyeceğini sorar (App Tracking Transparency). İzin vermezsen reklam kimliği paylaşılmaz ve reklamlar kişiselleştirilmez. Oyun iki durumda da aynı çalışır. Bunu iOS Ayarlar → Gizlilik ve Güvenlik → Takip bölümünden değiştirebilirsin. Tam sürümde reklam gösterilmez.</p>
 
-<h2>5. Satın alma (Apple ve RevenueCat)</h2>
-<p>Tam sürüm, Apple'ın aldığı tek seferlik bir uygulama içi satın almadır. Ödeme bilgilerini ve Apple kimliğini görmeyiz. Satın almayı doğrulamak ve diğer cihazlarında geri yüklemek için RevenueCat, Inc. hizmetini kullanırız; RevenueCat anonim bir uygulama kullanıcı kimliğini, satın alma makbuzunu ve temel cihaz bilgilerini işler. Ayrıntı: <a href="https://www.revenuecat.com/privacy/">RevenueCat gizlilik politikası</a>.</p>
+<h2>5. Satın alma (Apple)</h2>
+<p>Tam sürüm, tamamen Apple'ın App Store (StoreKit) üzerinden aldığı tek seferlik bir uygulama içi satın almadır. Ödeme bilgilerini ve Apple kimliğini görmeyiz; satın alma sunucumuz da yoktur: oyun yalnızca cihazında tam sürümün alındığını öğrenir, böylece onu açar ve diğer cihazlarında geri yükler.</p>
 
 <h2>6. Game Center</h2>
 <p>Game Center'a giriş yaptıysan başarımların ve satıcı puanın Apple Game Center'a gönderilir ve Game Center ayarlarına göre, <a href="https://www.apple.com/legal/privacy/">Apple Gizlilik Politikası</a> kapsamında gösterilir. Game Center kimliğin bize ulaşmaz.</p>
@@ -94,7 +94,7 @@ PRIVACY_TR = f"""
 <p><i>Sesli cevap ver</i>'e dokunursan iOS mikrofon ve konuşma tanıma izni ister. Konuşman Apple'ın konuşma tanıma hizmetiyle yazıya çevrilir (cihaz destekliyorsa iPhone'unda, desteklemiyorsa Apple'ın gizlilik politikası kapsamında Apple sunucularında) ve metin yalnızca cihazında eşleşen kartı seçmek için kullanılır. Sesini ya da metni kaydetmeyiz, saklamayız, bize ulaşmaz. Her zaman kartlara dokunarak da oynayabilirsin.</p>
 
 <h2>8. Yurt dışına aktarım</h2>
-<p>Cloudflare, Google ve RevenueCat verileri ABD dahil başka ülkelerde işleyebilir. Bu sağlayıcılar AB Standart Sözleşme Maddeleri gibi güvenceler kullanır. Türkiye'deki oyuncular için veriler bu güvencelere ve gerektiğinde uygulama içindeki izin ve rıza ekranlarıyla verdiğin açık rızaya dayanılarak yurt dışına aktarılır (KVKK m.9).</p>
+<p>Cloudflare ve Google verileri ABD dahil başka ülkelerde işleyebilir. Bu sağlayıcılar AB Standart Sözleşme Maddeleri gibi güvenceler kullanır. Türkiye'deki oyuncular için veriler bu güvencelere ve gerektiğinde uygulama içindeki izin ve rıza ekranlarıyla verdiğin açık rızaya dayanılarak yurt dışına aktarılır (KVKK m.9).</p>
 
 <h2>9. Çocuklar</h2>
 <p>DealCraft genel kitleye yönelik bir oyundur; 13 yaş altı çocuklara yönelik değildir. Bilerek çocuklardan kişisel veri toplamayız. Bir çocuğun sıralama tablosuna katıldığını düşünüyorsan bize yaz, sileriz.</p>
