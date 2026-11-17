@@ -113,8 +113,6 @@ SUPPORT_EN = f"""
 <p>Something not working, an idea, or a customer you loved? Email <a href="mailto:{EMAIL}">{EMAIL}</a> with your iPhone model, iOS version and, if it's about a chapter, its sector and number. A person who works on the game answers, usually within a day or two.</p>
 <h2>How do I play?</h2>
 <p>A customer sits across the table. Read their line, then tap one of the reply cards before the clock runs out. The best card uses the right sales technique for this customer at this moment; some cards are traps that sound right. After each move you see why it worked or not. Win the customer over and close the deal to finish the chapter. The <b>?</b> button on the home screen opens the full guide.</p>
-<h2>Answer by voice doesn't work</h2>
-<p>Voice answers need microphone and speech recognition permission. Turn them on in iOS Settings → DealCraft. You can always tap the cards instead.</p>
 <h2>Get the full version / restore my purchase</h2>
 <p>Tap any locked sector, or <i>Full version / restore purchase</i> at the bottom of the home screen. Use <i>Restore purchase</i> with the Apple ID you bought it with to unlock it on a new iPhone.</p>
 <h2>Refunds</h2>
@@ -134,8 +132,6 @@ SUPPORT_TR = f"""
 <p>Bir şey çalışmıyor mu, bir fikrin mi var, ya da çok sevdiğin bir müşteri mi? <a href="mailto:{EMAIL}">{EMAIL}</a> adresine iPhone modelini, iOS sürümünü ve bir bölümle ilgiliyse sektörünü ve numarasını yaz. Oyunda çalışan biri, genellikle bir iki gün içinde cevaplar.</p>
 <h2>Nasıl oynanır?</h2>
 <p>Masanın karşısında bir müşteri oturur. Söylediğini oku, süre bitmeden cevap kartlarından birine dokun. En iyi kart, bu müşteriye bu anda doğru satış tekniğini kullanır; bazı kartlar kulağa doğru gelen tuzaklardır. Her hamleden sonra neden işe yaradığını ya da yaramadığını görürsün. Müşteriyi ikna edip satışı kapatınca bölüm biter. Ana sayfadaki <b>?</b> düğmesi tam rehberi açar.</p>
-<h2>Sesli cevap çalışmıyor</h2>
-<p>Sesli cevap için mikrofon ve konuşma tanıma izni gerekir. iOS Ayarlar → DealCraft bölümünden açabilirsin. Her zaman kartlara dokunarak da oynayabilirsin.</p>
 <h2>Tam sürümü almak / satın alımı geri yüklemek</h2>
 <p>Kilitli bir sektöre ya da ana sayfanın altındaki <i>Tam sürüm / satın alımı geri yükle</i> bağlantısına dokun. Yeni bir iPhone'da, satın aldığın Apple kimliğiyle <i>Satın alımı geri yükle</i>'ye dokunman yeterli.</p>
 <h2>İade</h2>

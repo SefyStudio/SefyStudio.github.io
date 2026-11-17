@@ -318,7 +318,7 @@ def deal_page(lang):
                     ("Hesap açmam gerekir mi?", "Hayır. İlerlemen cihazında saklanır. Sıralama tablosu isteğe bağlıdır ve yalnızca bir görünen ad ister."),
                     ("İnternet gerekir mi?", "Hayır, internetsiz de oynanır. Sıralama tablosu için çevrimiçi oynanan bölümler sayılır."),
                     ("Gerçek satış eğitimi yerine geçer mi?", "DealCraft bir eğitim oyunudur. Bölümlerdeki yasal ve teknik bilgiler sadeleştirilmiştir; hukuki ya da mali tavsiye değildir.")],
-              helps=[("destek.html", "Destek", "Nasıl oynanır, satın alma, sesli cevap, sıralama."), ("gizlilik.html", "Gizlilik", "Hesap yok; reklamlar Google AdMob ile."),
+              helps=[("destek.html", "Destek", "Nasıl oynanır, satın alma, sıralama."), ("gizlilik.html", "Gizlilik", "Hesap yok; reklamlar Google AdMob ile."),
                      ("kosullar.html", "Kullanım koşulları", "Lisans, tam sürüm, sıralama kuralları."), ("/dealcraft/", "English", "Read this page in English.")])
          if tr else
          dict(how="What's inside", shots="From the game", faq="Questions",
@@ -333,7 +333,7 @@ def deal_page(lang):
                     ("Do I need an account?", "No. Your progress stays on your device. The leaderboard is optional and only asks for a display name."),
                     ("Does it need internet?", "No, it plays offline too. For the leaderboard, chapters played online count."),
                     ("Is it real sales training?", "DealCraft is a training game. Legal and technical details in the chapters are simplified; they are not legal or financial advice.")],
-              helps=[("support.html", "Support", "How to play, purchases, voice answers, leaderboard."), ("privacy.html", "Privacy", "No accounts; ads by Google AdMob."),
+              helps=[("support.html", "Support", "How to play, purchases, leaderboard."), ("privacy.html", "Privacy", "No accounts; ads by Google AdMob."),
                      ("terms.html", "Terms of use", "License, full version, leaderboard rules."), ("/dealcraft/tr/", "Türkçe", "Bu sayfayı Türkçe oku.")]))
     feats = "".join(f'<article class="feature card reveal"><img src="/dealcraft/img/{p}shot-{n}.webp" alt="{t}" width="660" height="1434" loading="lazy"><h3>{t}</h3><p>{d}</p></article>' for n, t, d in T["feats"])
     rail = '<div class="rail reveal" tabindex="0" aria-label="Screenshots">' + "".join(
