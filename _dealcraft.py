@@ -23,9 +23,9 @@ PRIVACY_EN = f"""
   <li>a random <b>player id</b> and a secret key created on your device (we store only a hash of the key);</li>
   <li>the <b>score and stars</b> of chapters you finish online, with the time they were recorded.</li>
 </ul>
-<p><b>Why:</b> to show the leaderboard you asked to join. <b>Legal basis:</b> performance of the service you requested (GDPR Art. 6(1)(b); KVKK Art. 5(2)(c)). <b>Where:</b> Cloudflare's database (Cloudflare D1). <b>How long:</b> until you delete it.</p>
-<p><b>Delete:</b> in the app, open <i>Leaderboard → Leave the board and delete my data</i>. Your name, scores and reports are deleted from our server immediately. You can also email us.</p>
-<p><b>Display names and reports.</b> Names are checked against a list of offensive words. Any player can report a name; a report stores the reported player id, the reporter's player id (or, for viewers who have not joined, a one-way hash of their IP address) and the time. A name reported by two different players is hidden. Reports are deleted with the reported or reporting player's data.</p>
+<p><b>Why:</b> to show the leaderboard you asked to join. <b>Legal basis:</b> performance of the service you requested (GDPR Art. 6(1)(b); KVKK Art. 5(2)(c)). <b>Where:</b> Cloudflare's database (Cloudflare D1). <b>How long:</b> until you delete it, or one year after your last finished chapter, whichever comes first (inactive players are deleted automatically).</p>
+<p><b>Delete:</b> in the app, open <i>Leaderboard → Leave the board, delete my data, start over</i>. Your name, scores and reports are deleted from our server immediately, and your progress on this device is reset. You can also email us.</p>
+<p><b>Display names and reports.</b> Names are checked against a list of offensive words. Any player can report a name; a report stores the reported player id, the reporter's player id (or, for viewers who have not joined, a one-way hash of their IP address) and the time. A name reported by three different players is hidden. Reports are deleted with the reported or reporting player's data.</p>
 
 <h2>4. Ads (Google AdMob)</h2>
 <p>Players without the full version see a rewarded video only when they choose to watch one (to remove a wrong card) and an occasional full-screen ad between chapters, never during a chapter. Ads are served by Google AdMob (Google Ireland Limited / Google LLC). Google may collect and use your device's advertising identifier (IDFA), IP address, approximate location, ad interactions and diagnostic data to deliver, measure and, with your permission, personalise ads and to prevent fraud. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a> and <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
@@ -75,9 +75,9 @@ PRIVACY_TR = f"""
   <li>cihazında üretilen rastgele bir <b>oyuncu kimliği</b> ve gizli anahtar (anahtarın yalnızca özetini saklarız);</li>
   <li>çevrimiçi bitirdiğin bölümlerin <b>puan ve yıldızları</b> ve kayıt zamanı.</li>
 </ul>
-<p><b>Amaç:</b> katılmak istediğin tabloyu göstermek. <b>Hukuki sebep:</b> talep ettiğin hizmetin sunulması (KVKK m.5/2-c; GDPR m.6/1-b). <b>Nerede:</b> Cloudflare veritabanı (Cloudflare D1). <b>Ne kadar süre:</b> sen silene kadar.</p>
-<p><b>Silme:</b> Uygulamada <i>Sıralama tablosu → Tablodan çık ve verilerimi sil</i> düğmesine dokun. Adın, puanların ve bildirimlerin sunucudan hemen silinir. Bize e-posta da yazabilirsin.</p>
-<p><b>Görünen adlar ve bildirimler.</b> Adlar uygunsuz kelime listesiyle kontrol edilir. Her oyuncu bir adı bildirebilir; bildirim, bildirilen oyuncu kimliğini, bildirenin oyuncu kimliğini (tabloya katılmamış izleyiciler için IP adresinin tek yönlü özetini) ve zamanı saklar. İki farklı oyuncu tarafından bildirilen ad gizlenir. Bildirimler, bildirilen ya da bildiren oyuncunun verileriyle birlikte silinir.</p>
+<p><b>Amaç:</b> katılmak istediğin tabloyu göstermek. <b>Hukuki sebep:</b> talep ettiğin hizmetin sunulması (KVKK m.5/2-c; GDPR m.6/1-b). <b>Nerede:</b> Cloudflare veritabanı (Cloudflare D1). <b>Ne kadar süre:</b> sen silene kadar ya da son bitirdiğin bölümden bir yıl sonrasına kadar, hangisi önce gelirse (etkin olmayan oyuncular kendiliğinden silinir).</p>
+<p><b>Silme:</b> Uygulamada <i>Sıralama tablosu → Tablodan çık, verilerimi sil, baştan başla</i> düğmesine dokun. Adın, puanların ve bildirimlerin sunucudan hemen silinir; bu cihazdaki ilerlemen de sıfırlanır. Bize e-posta da yazabilirsin.</p>
+<p><b>Görünen adlar ve bildirimler.</b> Adlar uygunsuz kelime listesiyle kontrol edilir. Her oyuncu bir adı bildirebilir; bildirim, bildirilen oyuncu kimliğini, bildirenin oyuncu kimliğini (tabloya katılmamış izleyiciler için IP adresinin tek yönlü özetini) ve zamanı saklar. Üç farklı oyuncu tarafından bildirilen ad gizlenir. Bildirimler, bildirilen ya da bildiren oyuncunun verileriyle birlikte silinir.</p>
 
 <h2>4. Reklamlar (Google AdMob)</h2>
 <p>Tam sürümü olmayan oyunculara ödüllü video yalnızca kendileri seçtiğinde (bir yanlış kartı elemek için) ve bölümler arasında arada bir tam ekran reklam gösterilir; bölüm ortasında hiçbir zaman gösterilmez. Reklamları Google AdMob (Google Ireland Limited / Google LLC) sunar. Google; reklamları sunmak, ölçmek, iznin varsa kişiselleştirmek ve sahtekârlığı önlemek için cihazın reklam kimliğini (IDFA), IP adresini, yaklaşık konumunu, reklam etkileşimlerini ve teşhis verilerini toplayıp kullanabilir. Ayrıntı: <a href="https://policies.google.com/technologies/partner-sites">Google'ın, hizmetlerini kullanan uygulamalardan gelen bilgileri nasıl kullandığı</a> ve <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>.</p>
@@ -120,7 +120,7 @@ SUPPORT_EN = f"""
 <h2>Ads and privacy choices</h2>
 <p>In the EEA, UK and Switzerland, tap <i>Ad choices</i> at the bottom of the home screen. Tracking permission can be changed in iOS Settings → Privacy &amp; Security → Tracking. The full version has no ads.</p>
 <h2>Leaderboard</h2>
-<p>Joining is optional and only needs a display name. To report a name, tap <i>Report</i> next to it: it is hidden on your device at once and reviewed. To leave and delete your data, tap <i>Leave the board and delete my data</i>.</p>
+<p>Joining is optional and only needs a display name. To report a name, tap <i>Report</i> next to it: it is hidden on your device at once and reviewed. To leave and delete your data, tap <i>Leave the board, delete my data, start over</i>.</p>
 <h2>My progress is gone</h2>
 <p>Progress is saved on your device. Deleting the app or clearing its data removes it. Your full-version purchase is never lost: restore it with the same Apple ID.</p>
 <p style="margin-top:26px"><a class="btn ghost small" href="privacy.html">Privacy Policy</a> <a class="btn ghost small" href="terms.html">Terms of use</a> <a class="btn ghost small" href="./">DealCraft</a></p>
@@ -139,7 +139,7 @@ SUPPORT_TR = f"""
 <h2>Reklam ve gizlilik tercihleri</h2>
 <p>AEA, Birleşik Krallık ve İsviçre'de ana sayfanın altındaki <i>Reklam tercihleri</i>'ne dokun. Takip izni iOS Ayarlar → Gizlilik ve Güvenlik → Takip bölümünden değiştirilebilir. Tam sürümde reklam yoktur.</p>
 <h2>Sıralama tablosu</h2>
-<p>Katılmak isteğe bağlıdır; yalnızca bir görünen ad ister. Bir adı bildirmek için yanındaki <i>Bildir</i>'e dokun: ad cihazında hemen gizlenir ve incelenir. Tablodan çıkıp verilerini silmek için <i>Tablodan çık ve verilerimi sil</i>'e dokun.</p>
+<p>Katılmak isteğe bağlıdır; yalnızca bir görünen ad ister. Bir adı bildirmek için yanındaki <i>Bildir</i>'e dokun: ad cihazında hemen gizlenir ve incelenir. Tablodan çıkıp verilerini silmek için <i>Tablodan çık, verilerimi sil, baştan başla</i>'e dokun.</p>
 <h2>İlerlemem kayboldu</h2>
 <p>İlerleme cihazında saklanır. Uygulamayı silmek ya da verilerini temizlemek onu siler. Tam sürüm satın alman kaybolmaz: aynı Apple kimliğiyle geri yükleyebilirsin.</p>
 <p style="margin-top:26px"><a class="btn ghost small" href="gizlilik.html">Gizlilik Politikası</a> <a class="btn ghost small" href="kosullar.html">Kullanım koşulları</a> <a class="btn ghost small" href="./">DealCraft</a></p>
