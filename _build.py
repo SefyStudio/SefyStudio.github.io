@@ -28,7 +28,7 @@ LOOM_STORE = "https://apps.apple.com/app/id6822636298"
 PIP_STORE = "https://apps.apple.com/app/id6819880110"
 MIX_STORE = "https://apps.apple.com/app/id6823995084"
 MIX_LIVE = False  # Mix Bar is in App Review: the store badge says "coming soon" until it is live
-DEAL_STORE = "https://apps.apple.com/app/dealcraft"  # set to https://apps.apple.com/app/id<APPLE_ID> once the app record exists
+DEAL_STORE = "https://apps.apple.com/app/id6835662717"
 DEAL_LIVE = False  # DealCraft: "coming soon" badge until it is on the App Store
 APPLE = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2'
          '-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.1 2.5-1.8 3.1-.5 7.6 1.3 10.1.8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 '
