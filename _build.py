@@ -58,8 +58,7 @@ def band(cls, inner, sparks=True):
 
 
 def page(path, title, desc, body, game=None, current=None, image="/assets/brand/og-image.png", icon=None, extra="", noindex=False, lang="en", alt=None):
-    links = [("/#games", "Games", "games"), ("/dealcraft/", "DealCraft", "deal"), ("/loom-pop/", "Loom Pop!", "loom"), ("/mix-bar/", "Mix Bar", "mix"),
-             ("/#about", "About", "about"), ("/#contact", "Contact", "contact")]
+    links = [("/dealcraft/", "DealCraft", "deal"), ("/dealcraft/tr/", "Türkçe", "dealtr"), ("/#about", "Studio", "about"), ("/#contact", "Contact", "contact")]
     if alt:
         extra += f'<link rel="alternate" hreflang="{alt[0]}" href="{SITE}{alt[1]}">\n<link rel="alternate" hreflang="{lang}" href="{SITE}{path}">\n'
     icons = (f'<link rel="icon" href="{icon}">\n<link rel="apple-touch-icon" href="{icon}">' if icon else
@@ -89,7 +88,7 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/brand/
 {extra}</head>
 <body{f' data-game="{game}"' if game else ""}>
 <header class="nav"><div class="wrap bar">
-  <a class="logo" href="/"><img src="/assets/brand/sefystudio-logo-horizontal.svg" alt="SefyStudio" width="300" height="96"></a>
+  <a class="logo wm" href="/" aria-label="SefyStudio"><img src="/assets/brand/favicon-192.png" alt="" width="34" height="34"><span class="wm-t">Sefy<span>Studio</span></span></a>
   <button class="menu" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
   <nav aria-label="Main">{nav}</nav>
 </div></header>
@@ -98,14 +97,10 @@ def page(path, title, desc, body, game=None, current=None, image="/assets/brand/
 </main>
 <footer><div class="wrap">
   <div class="cols">
-    <div class="brand"><a class="logo" href="/"><img src="/assets/brand/sefystudio-logo-horizontal-white.svg" alt="SefyStudio" width="300" height="96"></a>
+    <div class="brand"><a class="logo wm light" href="/" aria-label="SefyStudio"><img src="/assets/brand/favicon-192.png" alt="" width="34" height="34"><span class="wm-t">Sefy<span>Studio</span></span></a>
       <p>A small independent studio making well-crafted games for iPhone.</p></div>
     <div><h4>DealCraft</h4><ul><li><a href="/dealcraft/">Overview</a> · <a href="/dealcraft/tr/">TR</a></li>
       <li><a href="/dealcraft/support.html">Support</a></li><li><a href="/dealcraft/privacy.html">Privacy</a></li><li><a href="/dealcraft/terms.html">Terms</a></li></ul></div>
-    <div><h4>Loom Pop!</h4><ul><li><a href="/loom-pop/">Overview</a></li><li><a href="{LOOM_STORE}">App Store</a></li>
-      <li><a href="/loom-pop/support.html">Support</a></li><li><a href="/loom-pop/privacy.html">Privacy</a></li></ul></div>
-    <div><h4>Mix Bar</h4><ul><li><a href="/mix-bar/">Overview</a></li>{f'<li><a href="{MIX_STORE}">App Store</a></li>' if MIX_LIVE else ''}
-      <li><a href="/mix-bar/support.html">Support</a></li><li><a href="/mix-bar/privacy.html">Privacy</a></li></ul></div>
     <div><h4>Studio</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="https://www.youtube.com/@sefystudio">YouTube</a></li>
       <li><a href="/brand/">Brand assets</a></li><li><a href="/app-ads.txt">app-ads.txt</a></li></ul></div>
   </div>
@@ -210,22 +205,17 @@ HOME = f"""
 <section class="hero">
   {band("home", f'''<div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="kicker">SefyStudio · Independent games</p>
+      <p class="kicker">SefyStudio · Independent studio</p>
       <h1>Games worth <em>getting good</em> at.</h1>
-      <p class="lead">A small independent studio making iPhone games with real writing, hand-made art and fair rules. Easy to start, worth mastering, and never in your way.</p>
-      <div class="actions"><a class="btn primary" href="#games">See our games</a><a class="btn ghost light" href="#about">The studio</a></div>
+      <p class="lead">A small independent studio making iPhone games with real writing, hand-made art and fair rules. Our first: DealCraft, a sales-training card game with 180 hand-written customers.</p>
+      <div class="actions"><a class="btn primary" href="/dealcraft/">See DealCraft</a><a class="btn ghost light" href="/dealcraft/tr/">Türkçe</a></div>
     </div>
     <div class="hero-shots" aria-hidden="true">
       <img class="ph a" src="/dealcraft/img/en-raw-turn.webp" alt="" width="660" height="1434">
-      <img class="ph b" src="/loom-pop/img/shot-1.webp" alt="" width="660" height="1434">
+      <img class="ph b" src="/dealcraft/img/en-shot-1.webp" alt="" width="660" height="1434">
     </div>
   </div>''')}
 </section>
-
-<section id="games"><div class="wrap">
-  <div class="section-head reveal"><h2>Our games</h2><p>Three games for iPhone, all free to start.</p></div>
-  <div class="games">{"".join(game_card(g) for g in GAMES)}</div>
-</div></section>
 
 <section id="about"><div class="wrap">
   <div class="about card reveal">
@@ -237,9 +227,9 @@ HOME = f"""
   </div>
   <div class="tiles">
     <div class="tile card reveal"><b>180</b><h3>hand-written customers</h3><p>Every DealCraft chapter is a real conversation, written by hand, with its own lesson.</p></div>
-    <div class="tile card reveal"><b>0</b><h3>accounts needed</h3><p>No sign-up walls. Your progress stays on your device.</p></div>
-    <div class="tile card reveal"><b>100%</b><h3>solvable</h3><p>Every Mix Bar level is checked by a solver before it ships. Fair puzzles only.</p></div>
-    <div class="tile card reveal"><b>200</b><h3>patterns</h3><p>Every motif in Loom Pop! is drawn stitch by stitch, from Kilim Classics to Sea Life.</p></div>
+    <div class="tile card reveal"><b>13</b><h3>real techniques</h3><p>SPIN, LAER, Feel-Felt-Found, value framing and more, each explained when it works and when it backfires.</p></div>
+    <div class="tile card reveal"><b>0</b><h3>accounts needed</h3><p>No sign-up walls. Your progress stays on your device; the leaderboard is optional.</p></div>
+    <div class="tile card reveal"><b>2</b><h3>languages</h3><p>Every customer, card and lesson written in Turkish and English.</p></div>
   </div>
 </div></section>
 {contact()}
@@ -562,7 +552,7 @@ PUBLISHER_TERMS = f"""
 """
 
 if __name__ == "__main__":
-    page("/", "SefyStudio · Games for iPhone", "SefyStudio is a small independent studio making iPhone games: DealCraft, Loom Pop! and Mix Bar.", HOME, current="home")
+    page("/", "SefyStudio · Games for iPhone", "SefyStudio is a small independent studio making iPhone games. Our first: DealCraft, the sales-training card game with 180 hand-written customers.", HOME, current="home")
     for lang, base in (("en", "/dealcraft/"), ("tr", "/dealcraft/tr/")):
         tr = lang == "tr"
         oth = "/dealcraft/" if tr else "/dealcraft/tr/"
@@ -578,11 +568,11 @@ if __name__ == "__main__":
             page(base + (tr_name if tr else en_name), title_tr if tr else title_en, (title_tr if tr else title_en) + " · SefyStudio",
                  doc("", body_tr if tr else body_en), alt=("en" if tr else "tr", oth + (en_name if tr else tr_name)), **kw)
     page("/loom-pop/", "Loom Pop! Yarn Ball Shooter", "Aim, pop and weave: match three yarn balls and knit 200 patterns. Free for iPhone.", LOOM,
-         game="loom", current="loom", image="/loom-pop/img/poster.jpg", icon="/loom-pop/img/icon-180.png", extra='<meta name="apple-itunes-app" content="app-id=6822636298">\n')
+         game="loom", current="loom", image="/loom-pop/img/poster.jpg", icon="/loom-pop/img/icon-180.png", extra='<meta name="apple-itunes-app" content="app-id=6822636298">\n', noindex=True)
     page("/loom-pop/support.html", "Loom Pop! Support", "Help with Loom Pop!: purchases, progress and ad choices.", doc("", LOOM_SUPPORT), game="loom", current="loom", icon="/loom-pop/img/icon-180.png")
     page("/loom-pop/privacy.html", "Loom Pop! Privacy Policy", "Privacy policy of Loom Pop! by SefyStudio.", doc("", LOOM_PRIVACY), game="loom", current="loom", icon="/loom-pop/img/icon-180.png")
     page("/mix-bar/", "Mix Bar: Water Sort Puzzle", "Pour, mix and serve: a water sort puzzle where flavours mix when you pour them. Free for iPhone.", MIX,
-         game="mix", current="mix", image="/mix-bar/img/poster.jpg", icon="/mix-bar/img/icon-180.png")
+         game="mix", current="mix", image="/mix-bar/img/poster.jpg", icon="/mix-bar/img/icon-180.png", noindex=True)
     page("/mix-bar/support.html", "Mix Bar Support", "Help with Mix Bar: how to play, purchases, progress and ad choices.", doc("", MIX_SUPPORT), game="mix", current="mix", icon="/mix-bar/img/icon-180.png")
     page("/mix-bar/privacy.html", "Mix Bar Privacy Policy", "Privacy policy of Mix Bar: Water Sort Puzzle by SefyStudio.", doc("", MIX_PRIVACY), game="mix", current="mix", icon="/mix-bar/img/icon-180.png")
     # the first Mix Bar build links /mix-bar/support/ and /mix-bar/privacy/: forward them

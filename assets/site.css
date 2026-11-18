@@ -275,3 +275,12 @@ footer { background: var(--ink); color: rgba(255, 255, 255, .78); padding: 64px 
   .dc-art .dc-tall { display: block; width: min(62%, 300px); height: auto; border: 3px solid var(--dc-ink); border-bottom: 0; border-radius: 14px 14px 0 0; box-shadow: 6px 0 0 var(--dc-koyu); transform: rotate(-2deg); transform-origin: bottom center; }
   .dc-ticket { margin: 20px 16px 22px; }
 }
+
+/* Wordmark (2026-11-18): light, editorial. Small Sefy mark, "Sefy" in Instrument Serif, "STUDIO" spaced mono caps. */
+.logo.wm { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.logo.wm img { width: 34px; height: 34px; border-radius: 10px; }
+.wm-t { display: inline-flex; align-items: baseline; gap: 7px; font-family: var(--serif); font-weight: 400; font-size: 27px; line-height: 1; letter-spacing: -.01em; }
+.wm-t span { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: .32em; text-transform: uppercase; color: var(--muted); transform: translateY(-3px); }
+.logo.wm.light { color: var(--white); }
+.logo.wm.light .wm-t span { color: rgba(255, 255, 255, .62); }
+@media (max-width: 520px) { .wm-t { font-size: 24px; } .wm-t span { font-size: 9.5px; letter-spacing: .26em; } }
